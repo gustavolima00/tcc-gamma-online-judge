@@ -1,72 +1,84 @@
 \chapter[Metodologia]{Metodologia}
 
-\section{Introdução}
+\section{Metodologia de desenvolvimento}
 
-A regra mais rígida com respeito a Introdução é que a mesma, que é 
-necessariamente parte integrante do texto, não deverá fazer agradecimentos 
-a pessoas ou instituições nem comentários pessoais do autor atinentes à 
-escolha ou à relevância do tema.
+O desenvolvimento da aplicação foi feito de maneira individual, e para organização do desenvolvimento foi feito primeiro um levantamento de requisitos. Os requisitos da aplicação foram esses:
+\begin{enumerate}
 
-A Introdução obedece a critérios do Método Cientifico e a exigências 
-didáticas. Na Introdução o leitor deve ser colocado dentro do espírito do 
-trabalho.
+    \item É necessário armazenar um número limitado de questões e eventos das maratonas UnB com atualização não frequente
+    \item O visitante do site deve ter capacidade de enviar sua solução em código para que ela seja julgada, e em pouco tempo ele deve receber o veredicto de sua submissão, caso passe em todos os testes o sistema deve deixar claro que seu código foi aceito, caso contrário o sistema deve apresentar uma mensagem exemplificando o erro como TLE, MLE, RE.
+    \item O visitante do site deve conseguir ter acesso aos problemas e eventos por um site, a tutoriais e dicas das questões, sendo que as dicas sejam frases que auxiliam o visitante na resolução do problema e o tutorial um guia completo sobre uma abordagem de solução do problema
+\end{enumerate}
 
-Cabe mencionar que a Introdução de um trabalho pode, pelo menos em parte, 
-ser escrita com grande vantagem uma vez concluído o trabalho (ou o 
-Desenvolvimento e as Conclusões terem sido redigidos). Não só a pesquisa 
-costuma modificar-se durante a execução, mas também, ao fim do trabalho, o 
-autor tem melhor perspectiva ou visão de conjunto.
+Dentro desses requisitos básicos as tarefas foram separadas em épicos e quebradas em tarefas menores, dentre todas as tarefas menores o nível de priorização foi feita com base em meu conhecimento em tecnologias, os requisitos que eu tinha conhecimento que poderiam ser cumpridos tiveram uma prioridade menor, pois caso algum requisito fosse mais difĩcil ou exigisse mais tempo de estudo para ser cumprido eu poderia avaliar alternativas.
 
-Por seu caráter didático, a Introdução deve, ao seu primeiro parágrafo, 
-sugerir o mais claramente possível o que pretende o autor. Em seguida deve 
-procurar situar o problema a ser examinado em relação ao desenvolvimento 
-científico e técnico do momento. Assim sendo, sempre que pertinente, os 
-seguintes pontos devem ser abordados: 
+Os requisitos citados acima estão feitos de uma maneira mais ampla e precisam ser quebrados em tarefas, para um melhor detalhamento e facilidade na execução.
 
-\begin{itemize}
+\subsection{Épico de armazenamento de questões}
 
-	\item Contextualização ou apresentação do tema em linhas gerais de 
-	forma clara e objetiva;
-	\item Apresentação da justificativa e/ou relevância do tema escolhido;
-	\item Apresentação da questão ou problema de pesquisa;
-	\item Declaração dos objetivos, gerais e específicos do trabalho;
-	\item Apresentação resumida da metodologia, e
-	\item Indicação de como o trabalho estará organizado.
+É necessário armazenar um número limitado de questões das maratonas UnB com atualização não frequente
 
-\end{itemize}
+\subsubsection{Tarefas}
 
-\section{Desenvolvimento}
+\begin{enumerate}
+    \item Criação de um banco de dados para armazenar questões e eventos.
+    \begin{enumerate}
+        \item As questões devem possuir título, enunciado, tempo limite de execução, limite de memória utilizado pelo programa, lista de tags que categorizam o problema, ID predefinido para localização das questões e identificação , lista de inputs e outputs de teste de teste.
+        \item Os eventos devem possuir uma data que identifica quando o evento aconteceu, um nome e uma lista de problemas, tal como o rótulo do problema naquele evento ex: "Questão A"
+    \end{enumerate}
+    \item Estabelecer uma relação entre as questões e os problemas, que deixe claro de qual evento aquele problema foi originado e a lista de problemas de um evento.
+    \item Disponibilizar um recurso para o armazenamento de novos eventos e novos problemas
+    \item Disponibilizar um recurso para recuperação de problemas e eventos
+    \item Disponibilizar um recurso para busca de eventos e problemas
+\end{enumerate}
 
-O Desenvolvimento (Miolo ou Corpo do Trabalho) é subdividido em seções de 
-acordo com o planejamento do autor. As seções primárias são aquelas que 
-resultam da primeira divisão do texto do documento, geralmente 
-correspondendo a divisão em capítulos. Seções secundárias, terciárias, 
-etc., são aquelas que resultam da divisão do texto de uma seção primária, 
-secundária, terciária, etc., respectivamente.
 
-As seções primárias são numeradas consecutivamente, seguindo a série 
-natural de números inteiros, a partir de 1, pela ordem de sua sucessão no 
-documento.
 
-O Desenvolvimento é a seção mais importante do trabalho, por isso exigi-se 
-organização, objetividade e clareza. É conveniente dividi-lo em pelo menos 
-três partes:
+\subsubsection{Execução}
 
-\begin{itemize}
+Para esse épico e essas tarefas optei por utilizar um banco de dados NoSQL o MongoDB, também utilizei um sistema em NodeJS que faz a gestão do banco e exposição de uma API REST, utilizando a linguagem de programação Typescript. 
+	O motivo da escolha desse banco de dados foi pela flexibilidade e compatibilidade com o sistema Node, o intuito do trabalho em geral é ser simples e convidativo para novos usuários que pretendem contribuir, portanto a mesma tecnologia e linguagem utilizada para o front da aplicação foi utilizada no backend da aplicação. 
+A principal razão para utilização de Typescript como linguagem de programação é pelo fato da linguagem ser fortemente tipada, portanto boa parte dos erros podem ser capturados pelo próprio compilador. Apesar de ser uma abordagem mais incisiva em relação ao desenvolvimento, que obriga o usuário a declarar o tipo das suas funções e objetos, ela traz facilidades para análise estática e resolução de bugs, e visto que o foco da aplicação é ser convidativa para novos contribuidores a utilização de typescript pode alertar erros comuns de iniciantes. 
 
-	\item Referencial teórico, que corresponde a uma análise dos trabalhos 
-	relevantes, encontrados na pesquisa bibliográfica sobre o assunto. 
-	\item Metodologia, que é a descrição de todos os passos metodológicos 
-	utilizados no trabalho. Sugere-se que se enfatize especialmente em (1) 
-	População ou Sujeitos da pesquisa, (2) Materiais e equipamentos 
-	utilizados e (3) Procedimentos de coleta de dados.
-	\item Resultados, Discussão dos resultados e Conclusões, que é onde se 
-	apresenta os dados encontrados a análise feita pelo autor à luz do 
-	Referencial teórico e as Conclusões.
+\subsection{Épico do juíz online}
 
-\end{itemize}
+O visitante do site deve ter capacidade de enviar sua solução em código para que ela seja julgada, e em pouco tempo ele deve receber o veredicto de sua submissão, caso passe em todos os testes o sistema deve deixar claro que seu código foi aceito, caso contrário o sistema deve apresentar uma mensagem exemplificando o erro como TLE, MLE, RE.
 
-\section{Uso de editores de texto}
+\subsubsection{Tarefas}
+\begin{enumerate}
+    \item Criação de um sistema que recebe um código em formato de arquivo, com o armazenamento persistente desse arquivo feito de maneira opcional
+    \item Armazenamento de entradas e saídas esperadas de problemas, com um código pré-definido que poderá ser utilizado por outros serviços da aplicação.
+    \item Criação de sistema que executa esse arquivo em uma linguagem de programação, dentre elas as principais linguagem que devem ser suportadas são, Java, C, C++ e Python, a execução deve possuir um tempo deve ter um tempo limite, e comparar as saídas esperadas do programa executado com as saídas esperadas do servidor, após a execução o sistema deve retornar um veredito para o usuário, como descrito no épico acima
+\end{enumerate}
 
-O uso de programas de edição eletrônica de textos é de livre escolha do autor. 
+\subsubsection{Execução}
 
+-
+
+
+\subsection{Épico de interface de usuário}
+
+O visitante do site deve conseguir ter acesso aos problemas e eventos por um site, a tutoriais e dicas das questões, sendo que as dicas sejam frases que auxiliam o visitante na resolução do problema e o tutorial um guia completo sobre uma abordagem de solução do problema
+
+\subsubsection{Tarefas}
+\begin{enumerate}
+
+    \item Criação de um frontend que se comunica com os outros serviços e disponibilize ao usuário as informações citadas no épico acima
+    \begin{enumerate}
+        \item Criação de uma tela com as informações do problema, como enunciado, título, tempo limite, limite de memória, nessa tela deverá ser possível o usuário selecionar um arquivo de seu computador e enviar ao sistema para ser julgado, esta tela deverá suportar o formato LaTEX vindo como string do servidor e deverá suportar a inserção de tags HTML como tags de imagem e de estilização de texto.
+        \item Criação de uma tela com o tutorial da questão, essa tela deverá suportar o formato LaTEX vindo como string do servidor e deverá suportar a inserção de tags HTML como tags de imagem e de estilização de texto.
+        \item Criação de uma tela com detalhes do evento, contendo o título do evento, data e a lista de problemas que ocorreu naquele evento, linkando com a página da respectiva questão
+        \item Criação de uma tela com a lista de problemas, onde deve ser possível buscar problemas pelo título, título do evento em que ele aconteceu ou tags do problema.
+        \item Criação de uma tela com a lista de eventos, onde deve ser possível buscar eventos pelo seu título e ordenar os resultados pela data do evento ou ordem alfabética.
+    \end{enumerate}
+    \item Criação de funções que estabeleçam comunicação com os outros serviços da aplicação
+    \begin{enumerate}
+        \item Criação de uma funções que faça uma busca dos problemas no serviço que faz o armazenamento dos problemas ou que recupere um único evento com todos os seus detalhes
+        \item Criação de uma função que faça uma busca dos eventos no serviço que faz o armazenamento dos eventos ou que recupere um único evento
+        \item Criação de uma função que envie o arquivo de execução do usuário para o serviço que julga as questões, mostrando para o usuário o resultado de sua submissão 
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{Execução}
+
+Para realização desse épico foi utilizado uma aplicação em React com NodeJS, utilizando Typescript como linguagem, o motivo para a escolha dessas tecnologias foi a familiarização com as mesmas e a flexibilidade e facilidade de criação e reutilização de componentes
