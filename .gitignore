@@ -19,3 +19,11 @@
 *.brf
 *.toc
 *.idx
+
+# VS code files
+
+tcc.synctex.gz
+tcc.ind
+tcc.ilg
+tcc.fls
+tcc.fdb_latexmk
