@@ -10,7 +10,7 @@ O desenvolvimento da aplicação foi feito de maneira individual, e para organiz
     \item O visitante do site deve conseguir ter acesso aos problemas e eventos por um site, a tutoriais e dicas das questões, sendo que as dicas sejam frases que auxiliam o visitante na resolução do problema e o tutorial um guia completo sobre uma abordagem de solução do problema
 \end{enumerate}
 
-Dentro desses requisitos básicos as tarefas foram separadas em épicos e quebradas em tarefas menores, dentre todas as tarefas menores o nível de priorização foi feita com base em meu conhecimento em tecnologias, os requisitos que eu tinha conhecimento que poderiam ser cumpridos tiveram uma prioridade menor, pois caso algum requisito fosse mais difĩcil ou exigisse mais tempo de estudo para ser cumprido eu poderia avaliar alternativas.
+Dentro desses requisitos básicos as tarefas foram separadas em épicos e quebradas em tarefas menores, dentre todas as tarefas menores o nível de priorização foi feita com base em meu conhecimento em tecnologias, os requisitos que eu tinha conhecimento que poderiam ser cumpridos tiveram uma prioridade menor, pois caso algum requisito fosse mais difícil ou exigisse mais tempo de estudo para ser cumprido eu poderia avaliar alternativas.
 
 Os requisitos citados acima estão feitos de uma maneira mais ampla e precisam ser quebrados em tarefas, para um melhor detalhamento e facilidade na execução.
 
@@ -22,10 +22,10 @@ Os requisitos citados acima estão feitos de uma maneira mais ampla e precisam s
 
 \begin{enumerate}
     \item Criação de um banco de dados para armazenar questões e eventos.
-    \begin{enumerate}
-        \item As questões devem possuir título, enunciado, tempo limite de execução, limite de memória utilizado pelo programa, lista de tags que categorizam o problema, ID predefinido para localização das questões e identificação , lista de inputs e outputs de teste de teste.
-        \item Os eventos devem possuir uma data que identifica quando o evento aconteceu, um nome e uma lista de problemas, tal como o rótulo do problema naquele evento ex: "Questão A"
-    \end{enumerate}
+          \begin{enumerate}
+              \item As questões devem possuir título, enunciado, tempo limite de execução, limite de memória utilizado pelo programa, lista de tags que categorizam o problema, ID predefinido para localização das questões e identificação , lista de inputs e outputs de teste de teste.
+              \item Os eventos devem possuir uma data que identifica quando o evento aconteceu, um nome e uma lista de problemas, tal como o rótulo do problema naquele evento ex: "Questão A"
+          \end{enumerate}
     \item Estabelecer uma relação entre as questões e os problemas, que deixe claro de qual evento aquele problema foi originado e a lista de problemas de um evento.
     \item Disponibilizar um recurso para o armazenamento de novos eventos e novos problemas
     \item Disponibilizar um recurso para recuperação de problemas e eventos
@@ -36,11 +36,11 @@ Os requisitos citados acima estão feitos de uma maneira mais ampla e precisam s
 
 \subsubsection{Execução}
 
-Para esse épico e essas tarefas optei por utilizar um banco de dados NoSQL o MongoDB, também utilizei um sistema em NodeJS que faz a gestão do banco e exposição de uma API REST, utilizando a linguagem de programação Typescript. 
-	O motivo da escolha desse banco de dados foi pela flexibilidade e compatibilidade com o sistema Node, o intuito do trabalho em geral é ser simples e convidativo para novos usuários que pretendem contribuir, portanto a mesma tecnologia e linguagem utilizada para o front da aplicação foi utilizada no backend da aplicação. 
-A principal razão para utilização de Typescript como linguagem de programação é pelo fato da linguagem ser fortemente tipada, portanto boa parte dos erros podem ser capturados pelo próprio compilador. Apesar de ser uma abordagem mais incisiva em relação ao desenvolvimento, que obriga o usuário a declarar o tipo das suas funções e objetos, ela traz facilidades para análise estática e resolução de bugs, e visto que o foco da aplicação é ser convidativa para novos contribuidores a utilização de typescript pode alertar erros comuns de iniciantes. 
+Para esse épico e essas tarefas optei por utilizar um banco de dados NoSQL o MongoDB seguindo sua documentação disponível em \cite{doc:mongodb}, também utilizei um sistema em NodeJS que faz a gestão do banco e exposição de uma API REST, utilizando a linguagem de programação Typescript.
+O motivo da escolha desse banco de dados foi pela flexibilidade e compatibilidade com o sistema Node, o intuito do trabalho em geral é ser simples e convidativo para novos usuários que pretendem contribuir, portanto a mesma tecnologia e linguagem utilizada para o front da aplicação foi utilizada no backend da aplicação.
+A principal razão para utilização de Typescript como linguagem de programação é pelo fato da linguagem ser fortemente tipada, portanto boa parte dos erros podem ser capturados pelo próprio compilador. Apesar de ser uma abordagem mais incisiva em relação ao desenvolvimento, que obriga o usuário a declarar o tipo das suas funções e objetos, ela traz facilidades para análise estática e resolução de bugs, e visto que o foco da aplicação é ser convidativa para novos contribuidores a utilização de typescript pode alertar erros comuns de iniciantes.
 
-\subsection{Épico do juíz online}
+\subsection{Épico do juiz online}
 
 O visitante do site deve ter capacidade de enviar sua solução em código para que ela seja julgada, e em pouco tempo ele deve receber o veredicto de sua submissão, caso passe em todos os testes o sistema deve deixar claro que seu código foi aceito, caso contrário o sistema deve apresentar uma mensagem exemplificando o erro como TLE, MLE, RE.
 
@@ -53,8 +53,7 @@ O visitante do site deve ter capacidade de enviar sua solução em código para 
 
 \subsubsection{Execução}
 
--
-
+A execução desse épico ainda não foi feita e está planejada para ser realizada utilizando ferramentas similares às dos outros módulos da aplicação. Um servidor será feito utilizando NodeJS com Typescript de linguagem e para julgar as questões será utilizado alguma forma ainda não definida de isolar um ambiente que executa os códigos, será feito um monitoramento dos recursos utilizados, como memória, e o tempo gasto para a execução do problema. Esse módulo da aplicação será responsável também por armazenar as entradas e saídas dos problemas para entregar o veredito do código executado
 
 \subsection{Épico de interface de usuário}
 
@@ -64,21 +63,35 @@ O visitante do site deve conseguir ter acesso aos problemas e eventos por um sit
 \begin{enumerate}
 
     \item Criação de um frontend que se comunica com os outros serviços e disponibilize ao usuário as informações citadas no épico acima
-    \begin{enumerate}
-        \item Criação de uma tela com as informações do problema, como enunciado, título, tempo limite, limite de memória, nessa tela deverá ser possível o usuário selecionar um arquivo de seu computador e enviar ao sistema para ser julgado, esta tela deverá suportar o formato LaTEX vindo como string do servidor e deverá suportar a inserção de tags HTML como tags de imagem e de estilização de texto.
-        \item Criação de uma tela com o tutorial da questão, essa tela deverá suportar o formato LaTEX vindo como string do servidor e deverá suportar a inserção de tags HTML como tags de imagem e de estilização de texto.
-        \item Criação de uma tela com detalhes do evento, contendo o título do evento, data e a lista de problemas que ocorreu naquele evento, linkando com a página da respectiva questão
-        \item Criação de uma tela com a lista de problemas, onde deve ser possível buscar problemas pelo título, título do evento em que ele aconteceu ou tags do problema.
-        \item Criação de uma tela com a lista de eventos, onde deve ser possível buscar eventos pelo seu título e ordenar os resultados pela data do evento ou ordem alfabética.
-    \end{enumerate}
+          \begin{enumerate}
+              \item Criação de uma tela com as informações do problema, como enunciado, título, tempo limite, limite de memória, nessa tela deverá ser possível o usuário selecionar um arquivo de seu computador e enviar ao sistema para ser julgado, esta tela deverá suportar o formato LaTEX vindo como string do servidor e deverá suportar a inserção de tags HTML como tags de imagem e de estilização de texto.
+              \item Criação de uma tela com o tutorial da questão, essa tela deverá suportar o formato LaTEX vindo como string do servidor e deverá suportar a inserção de tags HTML como tags de imagem e de estilização de texto.
+              \item Criação de uma tela com detalhes do evento, contendo o título do evento, data e a lista de problemas que ocorreu naquele evento, com um link com a página da respectiva questão
+              \item Criação de uma tela com a lista de problemas, onde deve ser possível buscar problemas pelo título, título do evento em que ele aconteceu ou tags do problema.
+              \item Criação de uma tela com a lista de eventos, onde deve ser possível buscar eventos pelo seu título e ordenar os resultados pela data do evento ou ordem alfabética.
+          \end{enumerate}
     \item Criação de funções que estabeleçam comunicação com os outros serviços da aplicação
-    \begin{enumerate}
-        \item Criação de uma funções que faça uma busca dos problemas no serviço que faz o armazenamento dos problemas ou que recupere um único evento com todos os seus detalhes
-        \item Criação de uma função que faça uma busca dos eventos no serviço que faz o armazenamento dos eventos ou que recupere um único evento
-        \item Criação de uma função que envie o arquivo de execução do usuário para o serviço que julga as questões, mostrando para o usuário o resultado de sua submissão 
-    \end{enumerate}
+          \begin{enumerate}
+              \item Criação de uma funções que faça uma busca dos problemas no serviço que faz o armazenamento dos problemas ou que recupere um único evento com todos os seus detalhes
+              \item Criação de uma função que faça uma busca dos eventos no serviço que faz o armazenamento dos eventos ou que recupere um único evento
+              \item Criação de uma função que envie o arquivo de execução do usuário para o serviço que julga as questões, mostrando para o usuário o resultado de sua submissão
+          \end{enumerate}
 \end{enumerate}
 
 \subsubsection{Execução}
 
 Para realização desse épico foi utilizado uma aplicação em React com NodeJS, utilizando Typescript como linguagem, o motivo para a escolha dessas tecnologias foi a familiarização com as mesmas e a flexibilidade e facilidade de criação e reutilização de componentes
+
+\section{Ferramentas utilizadas}
+
+\subsection{Ferramenta de versionamento}
+
+O desenvolvimento dos resultados parciais foi feito utilizando a ferramenta de versionamento git, documentação disponível em \cite{doc:git}, e o github, um hub da ferramenta que possibilita o versionamento da aplicação, site disponível em \cite{github}.
+
+\subsection{Hardware}
+
+Foram utilizadas 2 máquinas diferentes para o desenvolvimento e o compartilhamento do código foi feito com o auxílio da ferramenta de versionamento. Uma máquina possui o sistema Ubuntu 20.04.3 LTS e a outra um macOS Big Sur 11.5.2.
+
+\subsection{Principais softwares}
+
+Os principais frameworks e softwares utilizados para o desenvolvimento foram o Node.js, disponível em \cite{nodejs},  React, disponível em \cite{react}, e Bootstrap, disponível em \cite{reactbootstrap}.
