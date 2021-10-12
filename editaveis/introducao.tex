@@ -2,95 +2,34 @@
 
 \section{Contextualização}
 
-O trabalho consiste em um juiz online para armazenar e julgar códigos de questões das edições da
-maratonas UnB de programação.
-Durante os anos foram realizadas várias edições das maratonas de programação UnB, que são eventos
-para competidores testar e aprimorar as suas habilidades de programação e resolução de problemas.
-Em geral essas maratonas são interessantes para alunos iniciantes e intermediários em programação
-competitiva, pois os problemas variam entre problemas fáceis e mais difíceis. Essas maratonas foram
-realizadas internamente, muitas vezes sem auxílio de ferramentas externas e servidores externos, o
-que dificulta os competidores a encontrar questões antigas de edições passadas, encontrar resolução
-e tutoriais para as questões, e o mais importante, uma plataforma para testar seus códigos,
-processo que é fundamental para aprendizagem na área.
+Maratonas de programação são eventos nos quais programadores testam e aprimoram suas habilidades de programação e resolução de problemas, dentre elas existem vários níveis que podem englobar programadores iniciantes ou mais experientes. Um exemplo de evento dessa natureza é a Maratona de programação UnB, realizada desde 2013 e que acumula até hoje 9 edições. Em geral ela é voltada para o público iniciante e intermediário, pois os problemas variam entre fáceis e difíceis.
 
-Existem vários juízes online que fazem esse trabalho de armazenar e julgar questões, os mais
-populares no meio da programação para competição no Brasil são o Online Judge, URI e o Codeforces,
-porém o processo para criar eventos e centralizar as questões nesses juízes não é ideal. Dentre
-eles só o URI é disponibilizado em português, nele um usuário comum não consegue criar questões
-originais, e mesmo criando questões os tutoriais e dicas não são feitos da maneira ideal, as
-ferramentas proporcionadas são um uDebug e um fórum para discussão, que ajudam, porém não é ideal,
-pois o feedback de um fórum não é imediato, o que pode desencorajar estudantes a procurarem essa
-plataforma para esse tipo de uso. O Codeforces é um ótimo juíz e bastante conhecido por ser uma
-plataforma mais aberta, nele é possível ver o código de outros competidores em competições
-oficiais, após a competição, e nos principais eventos são disponibilizados tutoriais para as
-questões, para auxiliar o competidor que teve muita dificuldade e tem curiosidade de saber como é a
-resolução de uma questão específica, o que impede a utilização dessa plataforma é que a linguagem
-oficial do site é inglês e não é possível criar questões e eventos no site, apenas em grupos, o que
-dificulta a catalogação e indexação dos problemas.
+Esses eventos foram realizados, na maioria das vezes, internamente sem auxílio de ferramentas e servidores externos, o que dificulta os competidores a encontrar problemas mais antigos de edições passadas, encontrar resolução e tutoriais para as questões, e o mais importante, uma plataforma para testar seus códigos - processo que é fundamental para aprendizagem na área.
 
-O projeto consiste em um repositório que armazenará as questões das edições anteriores das
-maratonas de programação, separando as questões por edição das maratonas de programação e
-facilitando a busca de questões antigas. O sistema também disponibilizará tags que separam as
-questões por tópicos, o que é interessante para treinamento de um tópico específico. A plataforma
-disponibilizará os enunciados, dicas e tutoriais de como resolver os problemas e um juíz online que
-julgará as soluções dos competidores interessados em treinar suas soluções para essas questões de
-edições passadas, com isso o feedback para a resolução dos problemas e busca de soluções será
-imediato, o que motiva mais o competidor.
+Existem vários juízes onlines que fazem o trabalho de armazenar e julgar problemas. No brasil, os mais populares entre competidores são o URI Online Judge, Codeforces e Online Judge. Dentre eles, é possível cadastrar novas questões utilizando o Codeforces ou o URI Online Judge, sendo o URI o único em português. Porém, a indexação dos problemas para buscas, separação em eventos e a escrita de tutoriais não é flexível, e em alguns casos, nem é possível. Além disso, alguns desses juízes possuem problemas de usabilidade e um feedback não assertivo acerca do resultado quando o público são programadores iniciantes, questão apontada também por Francisco (\citeyear{francisco_re:JONEPI}):
+\begin{quotation}
+    [\dots] Talvez devido à falta de maturidade e à origem baseada em competições, os sistemas apresentam problemas de usabilidade. O processo de submissão de programas ainda apresenta problemas, e o \textit{feedback} não é suficiente para que alunos consigam corrigir muitos dos erros.
+\end{quotation}
 
+Conforme se tem observado, a utilização de ferramentas existentes atualmente para o cadastro de questões das edições das Maratonas de programação UnB, dificulta a flexibilização da inovação no ensino de estudantes iniciantes na área.
 
 \section{Justificativa/Motivação}
 
-O primeiro contato que eu tive com um juíz online foi no primeiro semestre da faculdade na
-disciplina de Algoritmos e Programação para Computadores, nessa disciplina era ensinado programação
-básica, e o meu professor utilizava o juíz online URI. Nele o feedback para resolução dos problemas
-era imediato, eu sabia quando um código estava errado, lento ou inadequado para aquele problema, o
-que facilitava mais no aprendizado pois eu não dependia de um professor corrigir meu código para
-saber se estava certo. No terceiro semestre da faculdade tive um contato maior com esse tipo de
-Juíz online pois entrei no mundo de programação competitiva, eu competi em várias edições da
-Maratona UnB de programação, o que me motivou a participar da seletiva de programação, que me
-rendeu uma vaga para competir na Final brasileira de programação em campina grande, lá eu obtive o
-26º lugar do brasil em programação. Dentre todas as maratonas que eu fiz eu percebi que o
-armazenamento desses eventos geralmente não é feito de forma ideal, com exceção de alguns eventos
-como competições da Olimpíada Brasileira de Informática, que tem um site próprio para armazenar
-questões de edições passadas, eventos próprios de plataformas, como os contests do Codeforces,
-porém muitos eventos não possuem uma plataforma que disponibiliza os enunciados e tutoriais dessas
-questões e julgam solução para auxiliar competidores a treinar e aprender mais. Fiz várias das
-maratonas UnB de programação e em geral as questões desses eventos são muito boas para iniciantes
-aprenderem sobre tópicos clássicos de programação competitiva, acredito que uma plataforma para o
-armazenamento dessas questões será uma ótima ferramenta para novos competidores estudarem.
+Os sistemas de juízes onlines tem se popularizado no ensino de programação básica. Apesar disso, essas ferramentas ainda são voltadas para competidores mais experientes e deixam a desejar em relação ao aprendizado para iniciantes. Além disso, disciplinas de programação competitiva e a utilização de juízes online se mostraram eficazes no desenvolvimento de programadores.
 
-O trabalho a princípio será desenvolvido por mim e futuramente mantido por outras pessoas, visto
-isso, a tecnologia utilizada foi Node JS, tanto na interface quanto no servidor para facilitar a
-contextualização de contribuidores, e o aprendizado de interessados em contribuir com o projeto,
-sendo que na interface é utilizado o React como framework para criação das telas. A linguagem de
-programação utilizada tanto na interface, quanto no servidor foi Typescript pelo fato de ser uma
-linguagem de programação fortemente tipada, não foi optado a utilização de Javascript, que é uma
-linguagem mais comum para a tecnologia, pois apesar do ganho de tempo ao se preocupar menos com a
-tipagem, erros futuros podem ser mais difíceis de se encontrar erros no código e revisar códigos de
-contribuidores pode ser mais complicado, com uma linguagem fortemente tipada boa parte do processo
-de análise é feito pelo compilador, e com um editor de texto configurado erros ficam mais visuais.
-O servidor se comunica com um banco de dados orientado a documento, o MongoDB, pois nesse projeto a
-flexibilidade do banco em relação ao armazenamento de documento é mais interessante que um banco de
-dados relacional. A popularidade entre Node e MongoDB foi outro fator para a escolha dessa
-tecnologia.
-
+Adicionalmente, juízes online não possuem um suporte adequado para o armazenamento e indexação de questões. Em decorrência disso, utilizar juízes online para armazenar questões antigas das maratonas de programação UnB traz pouca flexibilidade, limitando os recursos e impossibilitando o direcionamento da plataforma para estudantes iniciantes.
 
 \section{Objetivos}
 
-\subsection{Objetivo Geral}
+Diante do exposto, torna-se objetivo geral do trabalho criar uma plataforma para armazenar e julgar questões das edições anteriores das Maratonas UnB de programação.
 
-Criar plataforma para armazenar e julgar questões das edições anteriores das Maratonas UnB de
-programação
-
-\subsection{Objetivos específicos}
-
-Criação de banco de dados para armazenar questões e eventos das maratonas UnB de programação e as
-submissões dos usuários
-Criação de uma interface que possibilita um usuário encontrar, buscar, ler e enviar questões
-Criação de um micro serviço para criar, editar, deletar e fazer busca em questões e eventos. Esse
-serviço será utilizado pela interface.
-Criação  de um micro serviço para receber códigos dos usuários, julgá-los e retornar o veredito.
-Esse serviço será utilizado pela interface.
+E são objetivos específicos: 
+\begin{enumerate}
+    \item Armazenar questões anteriores das maratonas de programação UnB;
+    \item Proporcionar ferramentas de auxílio para programadores iniciantes, como tutoriais e dicas para resolução dos problemas;
+    \item Julgar as questões e entregar um feedback assertivo para os usuários a cerca dos códigos enviados à plataforma;
+    \item Indexar as questões possibilitar a busca para que o acesso às questões seja mais fácil.
+\end{enumerate}
 
 \section{Estrutura do Trabalho}
 

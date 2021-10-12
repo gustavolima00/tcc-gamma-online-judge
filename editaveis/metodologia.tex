@@ -107,7 +107,7 @@ O segundo passo foi a interface, na interface um ponto importante foi a utiliza�
 
 \section{Arquitetura}
 
-A arquitetura geral escolhida para execução do projeto foi a de micro-serviços, separando a aplicação em módulos com pequenos conjuntos de responsabilidades individuais. A arquitetura de micro-serviços consiste em variados softwares que trabalham de forma independente. Em contraposição, existe a abordagem monolítica na qual o serviço concentra todas as responsabilidades do software. De fato, a abordagem monolítica é bastante eficaz para um sistema pequeno, pois facilita o deploy e desenvolvimento da aplicação; no entanto, na medida em que cresce a concentração de funcionalidades em um só sistema, agrava a complexidade do código, dificultando seu entendimento e manutenção, conforme afirma Namiot (2016) em On Micro-services Architecture.
+A arquitetura geral escolhida para execução do projeto foi a de micro-serviços, separando a aplicação em módulos com pequenos conjuntos de responsabilidades individuais. A arquitetura de micro-serviços consiste em variados softwares que trabalham de forma independente. Em contraposição, existe a abordagem monolítica na qual o serviço concentra todas as responsabilidades do software. De fato, a abordagem monolítica é bastante eficaz para um sistema pequeno, pois facilita o deploy e desenvolvimento da aplicação; no entanto, na medida em que cresce a concentração de funcionalidades em um só sistema, agrava a complexidade do código, dificultando seu entendimento e manutenção, conforme afirma Namiot (\citeyear{namiot_d:OMSA}) em On Micro-services Architecture.
 
 A separação nesses módulos visa a flexibilidade de escalar os micro serviços de forma independente: ``[\dots] Com a arquitetura monolítica, não é possível escalar cada componente de maneira independente'' \cite[tradução nossa]{namiot_d:OMSA}[p.24]\footnote{``[\dots] With a monolithic architecture, we can not scale each component independently''}. Outro benefício na separação das responsabilidades em 2 sistemas independentes é o desenvolvimento de novas features, manutenção e possível troca de framework ou de tecnologia presente no software para algo mais adequado ou algo mais novo. Em uma arquitetura monolítica, mudar o código pode se tornar muito difícil dependendo do tamanho e complexidade da aplicação, coadunamente, Namiot afirma: ``[\dots] Com a arquitetura monolítica, é muito difícil (se lê impossível) realizar mudanças.''\cite[tradução nossa]{namiot_d:OMSA}[p.24]\footnote{``[\dots] With the monolithic architecture, it is very difficult (read impossible) to change it.''}
 
@@ -123,16 +123,16 @@ O segundo serviço é responsável por receber arquivos com códigos, executá-l
 
 As duas competencias citadas funcionam bem de maneira independente, caso o banco de questões seja alterado, trocando a maneira em que é armazenado o enunciado das questões, isso não afeta o micro serviço que julga os códigos dos usuários; adicionalmente, caso sejam adotados novos métodos para julgar as questões, o módulo que armazena as questões também não será afetado.
 
-Os serviços descritos são simples e conseguem abranger todos os requisitos da aplicação. Diante do exposto, o padrão de abordagem escolhido para comunicação entre os micro serviços e a aplicação foi a de acesso direto, onde os micro serviços se comunicam diretamente com a aplicação - é dizer, a interface de usuário. Esse padrão também é discutido por Namiot (2016). A Figura \ref{fig:architecture} abaixo representa a arquitetura descrita e seus respectivos módulos:
+Os serviços descritos são simples e conseguem abranger todos os requisitos da aplicação. Diante do exposto, o padrão de abordagem escolhido para comunicação entre os micro serviços e a aplicação foi a de acesso direto, onde os micro serviços se comunicam diretamente com a aplicação - é dizer, a interface de usuário. Esse padrão também é discutido por Namiot (\citeyear{namiot_d:OMSA}). A Figura \ref{fig:architecture} abaixo representa a arquitetura descrita e seus respectivos módulos:
 
 \begin{figure}[h]
     \centering
     \caption{Arquitetura dos micro serviços da aplicação}
-    \includegraphics[keepaspectratio=true,scale=0.6]{figuras/arquiteture.png}
+    \includegraphics[keepaspectratio=true,scale=0.6]{figuras/arquiteture.eps}
     \label{fig:architecture}
 \end{figure}
 \begin{center}
     Fonte: elaboração nossa
 \end{center}
 
-Conforme pode ser observado, o primeiro módulo é representado como ``Gateway de armazenamento'' na figura. Ele faz a comunicação bidirecional com um banco de dados e com a aplicação, representada como ``Site - UI''. O segundo módulo descrito é representado como ``Juiz online'', ele faz uma comunicação bidirecional com a aplicação. Dentro dos requisitos da aplicação não se torna necessário o armazenamento das informações de submissões e vereditos, a partir desse fato, não necessariamente esse módulo utiliza um banco de dados.
+Conforme pode ser observado, o primeiro módulo é representado como ``Gateway de armazenamento'' na figura. Ele faz a comunicação bidirecional com um banco de dados e com a aplicação, representada como ``Site - UI''. O segundo módulo descrito é representado como ``Juiz online'', ele faz uma comunicação bidirecional com a aplicação. Dentro dos requisitos da aplicação não se torna necessário o armazenamento das informações de submissões e vereditos, a partir desse fato, não necessariamente esse módulo utiliza um banco de dados, no entanto, pode ocorrer utilização de um caso os requisitos da aplicação mudem.
