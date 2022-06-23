@@ -1,0 +1,81 @@
+\chapter[Fundamentação Teórica]{Fundamentação Teórica}
+\label{chap:ft}
+
+A seguir, estão os conceitos fundamentais para o embasamento da reflexão proposta. Para tanto, o capítulo está dividido nas seguintes seções: \nameref{sec:maratonasDeProgramação}, no qual são abordados os conceitos de maratonas de programação e programação competitiva. 
+\nameref{sec:maratonasUnB}, que contextualiza os eventos das Maratonas UnB de programação.
+\nameref{sec:juizesOnline}, que trata da definição de um juiz online e o impacto do contato de alunos à essa tecnologia.
+\nameref{sec:microServicos}, que aborda a definição da arquitetura de micro-serviços.
+\nameref{sec:apis}, que discorre sobre a definição de Web APIs. E por fim,
+\nameref{sec:desenvolvimentoWEB}, que aborda sobre desenvolvimento web. 
+
+
+\section{Maratonas de programação}
+\label{sec:maratonasDeProgramação}
+
+Programação competitiva é um termo usado quando problemas de ciência da computação são resolvidos o mais rápido possível, utilizando programação. Os problemas resolvidos são baseados em conhecimentos de Ciência da Computação, elaborados por uma pessoa com uma solução não única. Os problemas possuem testes com entradas e saídas esperadas \cite{halim2013competitive}.
+
+Maratona de programação é um termo adaptado do inglês para \textit{Programing Contest}. A definição de maratona de programação é intuitiva, consiste em um evento onde times competem entre si para determinar os vencedores \cite{revilla2008competitive}. 
+
+O formato mais comum das maratonas é o formato do \textit{International Collegiate Programming Contest} (ICPC); no qual os times recebem uma lista de problemas para resolve los em um tempo pré estabelecido de prova. Ao final da competição, o desempenho de cada time é baseado no número de problemas resolvidos e no tempo de resolução dos problemas \cite{aboutICPC}. 
+
+\section{Maratonas UnB de Programação}
+\label{sec:maratonasUnB}
+
+As Maratonas UnB de Programação são eventos baseados no ICPC e realizados pela UnB (Universidade de Brasília). A primeira edição do evento foi realizada em 2013 no LINF(Laboratório de Informática) da UnB - campus Darcy Ribeiro. O evento teve 9 edições no total, com suas 2 últimas edições realizadas 100\% online devido à pandemia da COVID-19.
+
+A participação das equipes nas maratonas UnB de programação é variada. Não limitada apenas à UnB, também houve a participação de escolas de outros estados no evento. Em 2017, em sua quinta edição, a Maratona UnB de programação teve participação da Universidade Federal de Uberlândia (UFU), Universidade de São Paulo (USP) e Pontifícia Universidade Católica de Goiás (PUC-GO). 
+
+As Maratonas UnB de Programação tem motivado alunos iniciantes com um bom desempenho em programação a se desafiarem, competindo com programadores mais experientes. Além disso, muitas equipes que competiram nessa maratona alcançaram bons resultados em competições ICPC.
+
+O sistema utilizado nos eventos variaram segundo as edições. O mais utilizado foi o BOCA \cite{de2004boca}, mesmo sistema utilizado em competições oficiais regionais e nacionais. Além do BOCA, para as edições VI, VIII e IX foi utilizada a plataforma \textit{Codeforces} \footnote{Disponível em: https://codeforces.com/}.
+
+\section{Juízes online}
+\label{sec:juizesOnline}
+
+Em maratonas de programação são utilizados juízes, ou seja, um corretor de problemas automático. No momento em que um competidor envia o código de um problema, o juiz é responsável por executar o código e corrigir o problema conforme as saídas esperadas. A correção de problemas pode ser realizada tanto online quanto \textit{offline}, isso depende da maneira onde o juiz foi desenvolvido e utilizado \cite{KURNIA2001299}.
+
+Ao enviar um problema para um juiz sua correção pode variar, dependendo das saídas esperadas do programa e os recursos gastos para execução. Quando o programa tem saídas diferentes das esperadas, o veredito retornado é \textit{Wrong Answer} (WA); caso o tempo de execução do programa seja maior que o esperado, o veredito é \textit{Time Limit Exceeded} (TLE); se o software utilizar mais memória do que permitido o juiz retorna \textit{Memory Limit Exceeded} (MLE); e por fim se as saídas do software forem iguais aos resultados esperadas e o software utilizar os recursos permitidos o veredito é \textit{Accepted} (AC).
+
+Atualmente, além de maratonas de programação, juízes online são bastante utilizados para o ensino de programação básica. \citeonline{francisco2016juiz} ressaltam os benefícios da utilização de um juiz online no ensino de matérias inicias de programação:
+
+\begin{quote}
+    ``[\dots] Aprendizagem no ritmo do aluno, auto-aprendizagem e redução da carga de trabalho do professor, são alguns dos benefícios apontados que contribuem não só em ambientes tradicionais de ensino, mas em ambientes de Educação a Distancia (EAD) e em MOOC’s. A liberdade de definir listas de exercício e a disponibilidade de instrumentos para acompanhar os alunos são questões importantes para o professor.'' \cite[p.18-19]{francisco2016juiz}
+\end{quote}
+
+Com a introdução de alunos a juízes online o ambiente de maratonas de programação se torna mais familiar. Isso se dá ao fato das maratonas utilizarem um formato de questões parecido ou até mesmo igual ao formato de juízes online. O envolvimento de alunos com maratonas se mostra positivo em relação aos seus resultados com disciplinas gerais de programação. Em um estudo realizado no curso de Engenharia de Software na Universidade de Brasília, \citeonline{pereiraetal} ressaltam que:
+
+\begin{quote}
+    ``Entre as influencias encontradas, quanto ao desempenho individual, com base nos resultados da analise de desempenho geral do aluno, observou que 69,9\% dos alunos tiveram um desempenho maior do que o desempenho anterior a esse contato. Ainda sobre a analise desempenho individual destes alunos em disciplinas de programação antes e depois da utilização desta estratégia de ensino, observou-se que 50,3\% dos alunos apresentaram um aumento no desempenho em disciplinas de programação. ''\cite[p.218]{pereiraetal}
+\end{quote} 
+
+\section{Arquitetura em micro-serviços}
+\label{sec:microServicos}
+
+A arquitetura de micro-serviços consiste em variados \textit{softwares} que trabalham independentemente. Em contraposição, existe a abordagem monolítica onde o serviço concentra todas as responsabilidades do software. De fato, a abordagem monolítica é bastante eficaz para um sistema pequeno, pois facilita o \textit{deploy} e desenvolvimento da aplicação; no entanto, enquanto cresce a concentração de funcionalidades em um só sistema, agrava a complexidade do código, dificultando seu entendimento e manutenção, conforme afirmam \citeonline{dmitry2014micro} em On Micro-services Architecture.
+
+A separação de aplicações em módulos visa a flexibilidade de escalar os micros serviços independentemente: ``[\dots] Com a arquitetura monolítica, não é possível escalar cada componente de maneira independente'' \cite[p.24, tradução nossa]{dmitry2014micro}\footnote{\textit{``[\dots] With a monolithic architecture, we can not scale each component independently''}}. Outro benefício na separação das responsabilidades em dois sistemas independentes é o desenvolvimento de novas \textit{features}, manutenção e possível troca de \textit{framework} ou de tecnologia presente no software para algo mais adequado, ou algo mais novo. 
+
+Em uma arquitetura monolítica, mudar o código pode se tornar muito difícil dependendo do tamanho e complexidade da aplicação, de modo coaduno, \citeonline{dmitry2014micro} afirmam: ``[\dots] Com a arquitetura monolítica, é muito difícil (se lê impossível) realizar mudanças.''\cite[p.24, tradução nossa]{dmitry2014micro}\footnote{\textit{``[\dots] With the monolithic architecture, it is very difficult (read impossible) to change it.''}}.
+
+\section{Web APIs}
+\label{sec:apis}
+
+\textit{Application Programing Interface} (API) é o termo usado para a representação da interface de uma aplicação. Essa interface dispõe as funções para interação com o sistema. Uma \textit{Web} API é a interface de um serviço \textit{web}, responsável por receber e atender as requisições enviadas ao sistema \cite{masse2011rest, richardson2013restful}.
+
+A comunicação com uma Web API é feita por \textit{requests} utilizando o protocolo HTTP de comunicação. Essa comunicação pode ou não ter envio de informações atreladas. Quando há o envio de informações, um formato utilizado para o envio de dados é o JSON, padrão utilizado para a representação de estruturas de dados \cite{richardson2013restful}.
+
+Aplicações modernas e sistemas baseados em micro-serviços necessitam de comunicação com serviços externos. A utilização de Web APIs é uma alternativa para estabelecer uma ponte de comunicação entre serviços. A API oferece uma lista de funções, que funcionam como uma camada de abstração ao sistema interno. Com isso, os sistemas compartilham informações sem comprometer suas independências \cite{ghebremicael2017transformation}.
+
+\section {Desenvolvimento WEB}
+\label{sec:desenvolvimentoWEB}
+
+A definição de Aplicação Web de \citeonline{hadley2006web} é:
+``[\dots] um aplicativo Web é definido como um aplicativo dinâmico baseado em comunicação HTTP cujas interações são passíveis de processamento por máquina'' \footnote{\textit{[\dots] a Web application is defined as a dynamic HTTP-based application whose
+interactions are amenable to machine processing. [\dots]}} \cite[p.1, tradução nossa]{hadley2006web}. Um exemplo de aplicação web é o site, conjunto de páginas web que compõem uma aplicação.
+
+Para o desenvolvimento de sites existem várias abordagens. Dentre elas, uma abordagem popular é a utilização do \textit{frameweork} \textit{React} — uma biblioteca \textit{javascript} \textit{open-source} desenvolvida pelo \textit{Facebook}. O conceito principal do \textit{React} é a reutilização de componentes de interfaces para a aceleração do processo de desenvolvimento \cite{rawat2020react}.
+
+Para reutilização de componentes \textit{React} são utilizados \textit{Node Packages} — bibliotecas \textit{javascritpt}. Para gerir essas bibliotecas é utilizado o NPM (\textit{Node Package Manager}), um recurso utilizado pelo React para controle de pacotes. Esse recurso permite a utilização de bibliotecas já desenvolvidas na aplicação, visando a otimização do trabalho, de acordo com \citeonline{rawat2020react} ``[\dots] A utilização de pacotes npm em seu empreendimento pode diminuir o tempo esperado para a realização de uma tarefa.''\footnote{\textit{``[\dots] Utilizing npm packages in your venture can diminish the measure of time expected to accomplish the errand.''}}\cite[p.699, tradução nossa]{rawat2020react}.
+
+
+

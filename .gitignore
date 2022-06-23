@@ -27,3 +27,8 @@ tcc.ind
 tcc.ilg
 tcc.fls
 tcc.fdb_latexmk
+main.synctex.gz
+main.ind
+main.ilg
+main.fls
+main.fdb_latexmk

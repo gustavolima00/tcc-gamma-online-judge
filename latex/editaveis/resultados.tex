@@ -1,0 +1,240 @@
+\chapter{Resultados}
+\label{cap:resultados}
+
+Este capítulo aborda os resultados de pesquisa e resultados de desenvolvimento da plataforma GOJ. Os resultados das pesquisas realizadas nos juízes onlines selecionados, tal como a seleção dos juízes, estão na seção \nameref{sec:pesquisa_juizes}; os resultados do desenvolvimento da aplicação e seus devidos módulos se encontram na seção \nameref{sec:modulosDaAplicacao}.
+
+\section{Pesquisa de juízes}
+\label{sec:pesquisa_juizes}
+
+Nessa seção serão abordados resultados de pesquisa que motivam a criação de um novo juiz online. Esta seção está dividida em duas subseções, onde a subseção \nameref{subsec:resultados_selecao_juizes} mostra os juízes selecionados para as análises, e \nameref{subsec:funcionalidades}, que apresentam funcionalidades relevantes para o GOJ e a presença delas nos juízes selecionados.
+
+\subsection{Seleção de juízes}
+\label{subsec:resultados_selecao_juizes}
+
+Foram selecionados 10 juízes onlines com base nos critérios e pesquisas realizadas na Subseção \ref{subsec:selecao_juizes}. Os juízes selecionados foram:
+
+\begin{enumerate}
+    \item OnlineJudge
+    \item Beecrowd
+    \item Sphere Online Judge (SPOJ)
+    \item PKU JudgeOnline
+    \item CodeChef
+    \item Google's Coding Competitions
+    \item Hackerearth
+    \item Codeforces
+    \item Neps Academy 
+    \item CodeBench
+\end{enumerate}
+
+Para o melhor entendimento da grandeza ou relevância de cada um dos juízes foi feito um levantamento do número de problemas de cada um deles, o que pode indicar o engajamento da comunidade, o tempo da plataforma no ar ou a frequência de manutenção dos mantenedores; esse levantamento pode ser observado na Tabela \ref{table:detalhes_juizes}. 
+
+\begin{table}[ht]
+    \caption{Detalhes dos juizes}
+    \centering
+    \label{table:detalhes_juizes}
+\begin{tabular}{lll}
+\rowcolor[HTML]{CBCEFB} 
+Juíz online         & Problemas & Consulta \\
+Online Judge                 & 12 483              & 27/03/2022        \\
+Beecrowd                     & 2 283               & 27/03/2022        \\
+Sphere Online Judge (SPOJ)   & 6 027               & 05/04/2022        \\
+PKU Judge Online             & 3 054               & 05/04/2022        \\
+CodeChef                     & 3 363               & 05/04/2022        \\
+Google's Coding Competitions & 224                & 05/04/2022        \\
+Hackerearth                  & 1 526               & 05/04/2022        \\
+Codeforces                   & 7 642               & 27/03/2022        \\
+Neps Academy                 & 1 069               & 05/04/2022        \\
+CodeBench                    & —                  & 05/04/2022       
+\end{tabular}
+\end{table}
+
+A Tabela \ref{table:detalhes_juizes} mostra uma coluna com o título “Problemas” — indica o número de problemas estimado na Subseção \ref{subsec:selecao_juizes} disponíveis para treino; na coluna Consulta é registrada a data em que o levantamento foi feito. Na última linha da tabela o Juiz online \textit{“Code Bench”} não possui registro de problemas, pois a plataforma funciona com um sistema de turmas fechadas, com isso, não foi possível estimar o número de problemas.
+
+\subsection{Funcionalidades}
+\label{subsec:funcionalidades}
+
+Dos juízes selecionados foi feito um levantamento de funcionalidades consideradas relevantes para o projeto GOJ. O objetivo desse levantamento é apresentar a motivação da criação de um novo juiz online, diante dos vários disponíveis. Para se tornar eficaz esse novo juiz deve ter como funcionalidade: plataforma em português, visto que o público alvo do sistema é um público falante da língua portuguesa; código aberto, para que possíveis melhorias no sistema sejam efetuadas posteriormente por contribuidores interessados; possibilidade de enviar problemas customizados para a plataforma; poder de inserir tutoriais para as questões, pois as questões das maratonas são acompanhadas de tutorias para auxiliar os competidores na resolução posterior.
+
+A Tabela \ref{table:funcionalidades_dos_juizes} apresenta as funcionalidades relevantes para o projeto GOJ na coluna “Funcionalidade”, lista  os juízes por sigla e assinala um “x” no juiz que possui a funcionalidade. O nome dos juízes foi abreviado, porém, eles seguem a ordem da Tabela \ref{table:detalhes_juizes}:
+
+
+\begin{table}[ht]
+    \caption{Funcionalidades Dos Juízes}
+    \centering
+    \label{table:funcionalidades_dos_juizes}
+    \resizebox{15cm}{!} 
+    { 
+    \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
+        \hline
+        \rowcolor[HTML]{CBCEFB} 
+        Funcionalidade & OJ\footnotemark & BC\footnotemark & SPOJ\footnotemark & PKU\footnotemark & CC\footnotemark & GCC\footnotemark & HH\footnotemark & CF\footnotemark & NA\footnotemark & CB\footnotemark \\ \hline
+        \begin{tabular}[c]{@{}l@{}}Plataforma \\ em português\end{tabular}                 &  & x &  &  &   &   &   &   & x & x  \\ \hline
+        Código aberto  &    &    &      &     &    &     &    &    &    &    \\ \hline
+        \begin{tabular}[c]{@{}l@{}}Possível enviar\\ problemas\\ customizados\end{tabular} &  & x &  &  &   &   &   & x &   &  \\ \hline
+        \begin{tabular}[c]{@{}l@{}}Possui tutoriais \\ dos problemas\end{tabular}          &  &   &  &  & x & x & x & x & x &  \\ \hline
+    \end{tabular}
+    }
+\end{table}
+\footnotetext[1]{Online Judge}
+\footnotetext[2]{Beecrowd}
+\footnotetext[3]{Sphere Online Judge}
+\footnotetext[4]{PKU JudgeOnline}
+\footnotetext[5]{CodeChef}
+\footnotetext[6]{Google's Coding Competitions}
+\footnotetext[7]{Hackerearth}
+\footnotetext[8]{Codeforces}
+\footnotetext[9]{Neps Academy}
+\footnotetext[10]{CodeBench}
+
+“Plataforma em português” representa os juízes que possuem o site em português ou suporte para a língua, os únicos juízes que possuem são o \textit{Beecrowd} e o \textit{Neps Academy}; apesar de outras plataformas possuírem questões na língua, como o \textit{Codeforces}, por exemplo, a plataforma não tem uma tradução disponível.  
+
+“Código aberto” representa os juízes que possuem código aberto para contribuidores externos, como no caso do juiz eletrônico “BOCA”, por exemplo, o que possibilita a contribuição ou cópia do mesmo, porém dos juízes pesquisados, nenhum possui. 
+
+“Possível enviar problemas customizados” é aplicado para juízes que permitem o envio de questões customizadas, apesar de alguns juízes estarem marcados com essa funcionalidade, não é trivial o envio, é preciso preencher alguns pre-requisitos para enviar problemas ou entrar em contato diretamente com a equipe do site para que as questões sejam aprovadas. Apesar disso, foram marcados as plataformas com essa possibilidade. 
+
+“Possui tutoriais dos problemas” representa os juízes com suporte para a adição de tutoriais. Algumas das plataformas não tem esse suporte ou não tem a intenção de ter tutoriais nos problemas, como é o exemplo dos juízes mais educativos, voltados para o uso acadêmico em exercícios e provas. Em geral, as plataformas voltadas para competições e treinos de programação competitiva possuem essa funcionalidade.
+ 
+ Como mostrado na Tabela \ref{table:funcionalidades_dos_juizes}, nenhum dos juízes selecionados abrange todas as funcionalidades relevantes, sendo que o máximo de abrangência foram 2 funcionalidades do total de 4, motivando a criação desse novo juiz online.
+ 
+\section{Módulos da Aplicação}
+\label{sec:modulosDaAplicacao}
+
+A aplicação foi dividida em 4 partes, o \textit{gamma judge ui}, que representa a interface; \textit{gamma judge api} que além de ser a API ainda funciona com um \textit{worker}, que trabalha recebendo e processando informações das submissões;  \textit{gamma judge tools} que tem esse nome por conta do moj tools\footnote{https://github.com/cd-moj/mojtools}, módulo responsável por julgar as submissões; e por fim o \textit{gamma judge admin}, que também é uma interface, porém com o intuito de edição dos eventos e problemas.
+
+\subsection{Gamma Judge API}
+\label{sec:gammaJudgeApi}
+
+Esse módulo da aplicação foi dividido em 3 projetos: \textit{API}, \textit{Infrastructure} e \textit{Workers}. A \textit{API} é responsável por efetuar a comunicação externa da aplicação via \textit{HTTP}; a \textit{Infrastructure} é responsável por concentrar a infraestrutura do sistema, como a comunicação com o banco de dados; e os \textit{Workers} são funções executadas periodicamente, nesse caso para fazer o acesso com o sistema de filas.
+
+Na Figura \ref{fig:judge_ui_folders} é apresentado o esquema de pastas do projeto, cada um dos blocos representa um projeto do \textit{.NET} e a organização das principais pastas ou arquivos. Na Api temos 2 pastas principais: \textit{“Controllers”}, que armazena os \textit{endpoints} expostos, onde é feita a comunicação de outros serviços; e \textit{“Models”} onde está as estruturas de algumas requisições; \textit{“Infrastructure”}, possui em maioria funções para comunicação com o banco de dados; já  \textit{“Workers”} possui um importante arquivo que faz a comunicação com o sistema de filas e recebe o veredicto das questões julgadas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/gamma_judge_api_folders.eps}
+    \caption{Esquema de pastas Gamma Judge API}
+    \label{fig:judge_ui_folders}
+\end{figure}
+
+\subsubsection{Módulo de problemas}
+\label{subsubsec:moduloDeProblemas}
+
+O módulo de problemas é responsável pelos problemas e todas as funcionalidades relacionadas às informações expostas para interface da aplicação. A Figura \ref{fig:problems_endpoints} representa os endereços expostos via API pelo módulo de problemas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/problems_endpoins.eps}
+    \caption{Funções expostas do módulo de problemas}
+    \label{fig:problems_endpoints}
+\end{figure}
+
+A Figura \ref{fig:problems_endpoints} mostra em \textbf{Endereços expostos} os endereços que devem ser públicos, acessados pela interface via API; os \textbf{Endereços internos} demonstrados mostram funções da \textit{API} realizados para uso interno, possibilitando o cadastro, edição e remoção de um problema sem a necessidade da comunicação direta com o banco de dados.
+
+\subsubsection{Módulo de eventos}
+\label{subsec:moduloDeEventos}
+
+O módulo de eventos é responsável pelas informações expostas relacionadas aos eventos cadastrados no banco de dados. A Figura \ref{fig:contests_endpoint} exemplifica o funcionamento desse módulo da API.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/contests_endpoint.eps}
+    \caption{Funções expostas do módulo de eventos}
+    \label{fig:contests_endpoint}
+\end{figure}
+
+O comportamento desse módulo é similar ao do módulo de problemas (Subseção \ref{subsubsec:moduloDeProblemas}). Ele expõe endereços internos, compostos por funções de criação, edição e remoção de eventos. Além disso, são disponibilizadas funções para recuperação de um único evento ou de vários eventos.
+
+\subsection{Gamma Judge UI}
+\label{sec:gamaJudgeUI}
+
+A interface da aplicação é um site, com páginas que abrangem as questões e os eventos. O objetivo da interface é organizar as informações da API para o usuário, e ser uma porta de entrada para as submissões.
+
+% A interface de usuário se concentra em um site. A aplicação tem o foco de ser simples e possuir módulos facilmente editáveis e substituíveis. Com base nisso a ferramenta de desenvolvimento da interface foi o \textit{React} \cite{rawat2020react}, utilizando \textit{Typescript} \cite{richards_et_al:CTTS} como linguagem principal.
+
+% A ideia da interface ser dividida em componentes, visa a reutilização dos mesmos. Atualmente existem várias aplicações para juízes online, eles podem ser utilizados para o aprendizado em disciplinas de programação \cite{francisco2016juiz}, podem ser utilizados para competições de programação \cite{halim2013competitive} ou para armazenar questões de eventos, como funciona hoje no site da Olimpíada brasileira de informática \cite{obi2021}.
+
+% Com a arquitetura e componentes divididos a interface pode ser adaptada para outras aplicações. A arquitetura em micro serviços permite futuramente que essa aplicação seja usada para outros fins de maneira mais fácil \ref{sec:microServicos}.
+% TODO -- Ver o que fazer com o texto comentado 
+
+\subsubsection{Questões}
+
+O módulo de questões na interface é responsável por disponibilizar ao usuário as informações a respeito das questões. Os dados disponíveis aqui são referentes aos dados da Subseção \ref{subsubsec:moduloDeProblemas}. Na Figura \ref{fig:question3} é possível observar a organização e a maneira com que os dados são disponibilizados ao usuário.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.2]{figuras/question3.eps}
+    \caption{Interface - informações da questão}
+    \label{fig:question3}
+\end{figure}
+
+A interface das questões é dividida em algumas partes: o menu lateral, observável na Figura \ref{fig:sendQuestion1} no Apêndice \ref{appendix:a}; as entradas e saídas, disponíveis na Figura \ref{fig:questionInputs} no Apêndice \ref{appendix:a}; o enunciado, disponível na Figura \ref{fig:questionStatement2} no Apêndice \ref{appendix:a}.
+
+Em juízes online elementos não textuais são bastante comuns para dar mais riquezas e detalhes às questões. Assim sendo, é comum a utilização de imagens, fórmulas matemáticas, e elementos para enfatizar trechos das questões, como textos em negrito ou itálico. Além de apresentar as informações do problema a interface também é responsável por representar elementos da API, em HTML\footnote{RAGGETT, Dave et al. HTML 4.01 Specification. W3C recommendation, v. 24, 1999.}  ou LaTEX\footnote{LAMPORT, Leslie. LaTeX. Company Cyfronet, 1991.}, em elementos não textuais; a Figura \ref{fig:questionStatement} exemplifica a utilização desses recursos.
+
+% Para entregar flexibilidade na utilização de elementos não textuais foi utilizado o recurso NPM. A biblioteca utilizada para a visualização de elementos textuais foi o \textit{\textbf{react-latex}} \cite{reactlatex}. Essa biblioteca da flexibilidade ao usuário para utilizar elementos presentes na linguagem LaTEX e a utilização de \textit{tags} HTMLpara a inclusão de elementos não textuais como imagens.
+% TODO -- Colocar na metodologia
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.35]{figuras/questionStatement.eps}
+    \caption{Interface — demonstração de elementos não textuais}
+    \label{fig:questionStatement}
+\end{figure}
+
+A Figura \ref{fig:questionStatement} apresentada foi renderizada automaticamente a partir de um texto bruto vindo da API. O texto bruto utilizado está disponível na Figura \ref{fig:statementText} no apêndice \ref{appendix:a}, tal como o resultado da sua renderização realizada pela aplicação, disponível na Figura \ref{fig:questionStatement2} no apêndice \ref{appendix:a}. Como demostrado na Figura \ref{fig:questionStatement}, neste enunciado foi utilizado elementos da linguagem LaTEX em azul, e elementos HTML em vermelho.
+
+\subsubsection{Eventos}
+\label{subsec:eventos}
+
+O módulo de eventos concentra as informações referentes a um determinado evento da Maratona UnB de Programação. Nesse módulo está concentrada a lista de questões do evento e a data em que ocorreu. As questões de um evento podem ser futuramente reaproveitadas em outras, portanto, também é apresentado a origem da questão, podendo ser original do evento ou podendo apresentar onde ela teve origem. A Figura \ref{fig:maratonaUnB} demostra a maneira que as informações são disponibilizadas ao usuário na tela.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.23]{figuras/contest2.eps}
+    \caption{Interface - Detalhes de um evento}
+    \label{fig:maratonaUnB}
+\end{figure}
+
+
+Como demonstrado na Figura \ref{fig:maratonaUnB}, são disponibilizadas informações do rótulo da questão\footnote{O rótulo é representado na Figura \ref{fig:maratonaUnB} com um ícone de balão}, título, marcações\footnote{As marcações são representadas na Figura \ref{fig:maratonaUnB} como \textit{tags}} e o evento original da questão. Diferente do que mostra a Figura \ref{fig:maratonaUnB}, é possível que nos eventos as questões sejam marcadas com rótulos diferentes das letras do alfabeto. Além disso, o campo ``Evento original'' poderia mostrar um botão para o evento em que aquele problema foi criado, caso ele tenha sido re-aproveitado nessa maratona.
+
+\subsection{Gamma Judge Tools}
+\label{sec:gamaJudgeTools}
+
+Essa parte do sistema é responsável por julgar as submissões enviadas e retornar o veredicto, para isso foi utilizada a ferramenta de código aberto moj tools\footnote{https://github.com/cd-moj/mojtools}, responsável por executar um código e comparar as saídas com as saídas esperadas.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/gamma_judge_tools_diagram.eps}
+    \caption{Gamma judge tools — Diagrama}
+    \label{fig:judge_tools_diagram}
+\end{figure}
+
+Na Figura \ref{fig:judge_tools_diagram}, a aplicação lê do sistema de filas uma mensagem contendo as informações da submissão, após a aplicação utilizar o moj tools para julgar, o veredicto é retornado para um sistema de notificações, com isso as outras aplicações são responsáveis por lidar com a notificação enviada e processar o veredicto da submissão. 
+
+\subsection{Gamma Judge Admin}
+\label{sec:gamaJudgeAdmin}
+
+A interface \textit{Gamma Judge Admin} auxilia o uso da API, com mecanismos para ler, criar, editar e deletar, um evento ou um problema, esse módulo não é necessário para o funcionamento da aplicação, porém, ele auxilia a manutenção e edição do conteúdo dos problemas armazenados. Sua estrutura se divide em 3 páginas:\textit{ “HomePage”}, que possui apenas botões para as outras páginas; \textit{``ProblemPage''}, que possui os mecanismos descritos, direcionados para os problemas; \textit{``ContestPage''} é como \textit{``ProblemPage''}, porém direcionada para eventos.
+
+\subsubsection{Problem Page}
+
+A pagina de problemas acessa a API apresentada na Subseção \ref{sec:gammaJudgeApi}, tento como base o \textit{customId}, uma sequência de caracteres que identifica cada um dos problemas unicamente. A Figura \ref{fig:judge_admin_problem} representa a página descrita; com o botão \textit{``GET''}, em verde, e o \textit{customId} preenchido, é possível recuperar as informações de um problema; \textit{``PUT''}, em azul, cria, caso o  não exista, ou sobrescreve as informações do problema; \textit{``DELETE''}, em vermelho, apaga o problema.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.32]{figuras/problem_page.eps}
+    \caption{Gamma judge Admin — ProblemPage}
+    \label{fig:judge_admin_problem}
+\end{figure}
+
+\subsubsection{Contest Page}
+
+A página de eventos tem o comportamento similar a página de problemas, com os mesmos botões e mesmo funcionamento, porém com menos informações. Na página de eventos é possível adicionar ou remover problemas ao evento utilizando o \textit{customId} do problema e o \textit{identifier}, será o identificador do problema naquele evento, como mostra na Figura \ref{fig:judge_admin_contest}.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[keepaspectratio=true,scale=0.45]{figuras/contest_page.eps}
+    \caption{Gamma judge Admin — ContestPage}
+    \label{fig:judge_admin_contest}
+\end{figure}

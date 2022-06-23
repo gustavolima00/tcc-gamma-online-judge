@@ -1,0 +1,50 @@
+\chapter{Introdução}
+
+O seguinte capítulo aborda as justificativas e motivações do trabalho. Sua estrutura é composta com pelas Seções: 
+\nameref{sec:contextualizacao}, que traz um contexto geral para o entendimento do trabalho. 
+\nameref{sec:justificativa}, que aborda a justificativa e motivação. 
+\nameref{sec:objetivos}, que apresenta os objetivos gerais e específicos.
+E por fim \nameref{sec:estruturaDoTrabalho} que apresenta a estrutura do trabalho.
+
+\section{Contextualização}
+\label{sec:contextualizacao}
+
+Maratonas de programação são originadas do termo \textit{Programming Contest}. Elas consistem em grupos de competidores, compostos usualmente por trios, disputando entre si. As equipes recebem um número definido de problemas e devem resolvê-los utilizando programação. Os problemas são julgados por juízes automatizados sendo submetidos em variadas linguagens. A competição pretende a resolução de mais problemas de maneira mais rápida.
+
+Um exemplo de uma maratona de programação, é a Maratona UnB de Programação, realizada desde 2013 e acumula até hoje 9 edições. Seu público vária, não se limitando apenas aos estudantes da UnB. Além disso, o nível dos competidores é abrangente, contendo estudantes iniciantes em programação e estudantes mais experientes.
+
+Outro exemplo é a Olimpíada brasileira de Informática. Diferente da Maratona UnB de Programação, ela é voltada para o público iniciante em programação. Os níveis dos competidores podem variar entre estudantes do ensino fundamental, ensino médio, técnico ou início de graduação \cite{obi2021:info}.
+
+As Maratonas UnB de Programação foram realizadas, na maioria das edições, sem auxílio de plataformas onlines, dificultando os competidores a encontrar problemas de edições passadas, buscar resolução e tutoriais para as questões, e o mais importante, uma plataforma para testar seus códigos — processo fundamental para aprendizagem na área.
+
+Existem vários juízes onlines que fazem o trabalho de armazenar e julgar problemas. No Brasil, os mais populares entre competidores são o \textit{Beecrowd}\footnote{Disponível em: https://www.beecrowd.com.br/}, \textit{Codeforces}\footnote{Disponível em: https://codeforces.com/} e \textit{Online Judge}\footnote{Disponível em: https://onlinejudge.org/}. Dentre eles, é possível cadastrar novas questões utilizando o \textit{Codeforces} ou o \textit{Beecrowd}, sendo o \textit{Beecrowd} o único em português. A indexação dos problemas para buscas, separação em eventos, escrita de tutoriais não é flexível, e em alguns casos, nem é possível. Além disso, alguns desses juízes possuem problemas de usabilidade e um \textit{feedback} não assertivo acerca do resultado, quando o público são programadores iniciantes, questão apontada também por \citeonline{francisco2016juiz}:
+\begin{quotation}
+     [\dots] Talvez devido à falta de maturidade e à origem baseada em competições, os sistemas apresentam problemas de usabilidade. O processo de submissão de programas ainda apresenta problemas, e o \textit{feedback} não é suficiente para que alunos consigam corrigir muitos dos erros.
+\end{quotation}
+
+Conforme se tem observado, a utilização de ferramentas existentes atualmente para o cadastro de questões das edições das Maratonas de programação UnB, dificulta a indexação dos problemas e limita a flexibilidade. Além disso, é interessante que as questões dos eventos fiquem organizadas em um único local. Essa ideia se assemelha ao site da Olimpíada brasileira de Informática \footnote{Disponível em: https://olimpiada.ic.unicamp.br/}, que concentra as questões e provas das edições anteriores do evento.
+
+\section{Justificativa/Motivação}
+\label{sec:justificativa}
+
+Os principais juízes online não possuem um suporte flexível para a indexação de questões das Maratonas UnB de Programação. Além disso, seria interessante a concentração das questões desses eventos em um site próprio, facilitando a busca por problemas.
+
+Atualmente os juízes online tem um formato voltado para competidores de programação. Devido a isso, o retorno das plataformas pode não ser suficiente para alunos iniciantes encontrarem erros presentes em seus códigos \cite{francisco2016juiz}. Um fator desmotivante para quem não é experiente e busca uma melhora em programação.
+
+\section{Objetivos}
+\label{sec:objetivos}
+
+Diante do exposto, torna-se objetivo do trabalho criar o \textit{Gamma Online Judge} (GOJ). Uma plataforma para armazenar e julgar questões das edições anteriores das Maratonas UnB de programação.
+
+Os objetivos deste trabalho são: 
+\begin{enumerate}
+    \item armazenar questões anteriores das maratonas de programação UnB;
+    \item proporcionar ferramentas de auxílio para programadores iniciantes, como tutoriais e dicas para resolução dos problemas;
+    \item julgar as questões e entregar uma resposta assertiva aos usuários acerca dos códigos enviados à plataforma;
+    \item indexar as questões e organizá-las possibilitando uma busca pelo usuário.
+\end{enumerate}
+
+\section{Estrutura do Trabalho}
+\label{sec:estruturaDoTrabalho}
+
+Este trabalho está estruturado da seguinte forma. Na \nameref{chap:ft} são apresentados os conceitos fundamentais para o entendimento do desenvolvimento deste trabalho. Na \nameref{cap:metodologia} são definidos os requisitos e a arquitetura do trabalho. Os \nameref{cap:resultados} com os módulos desenvolvidos da aplicação. Por final o \nameref{chap:cronograma} com um mapeamento do tempo para o término do projeto.

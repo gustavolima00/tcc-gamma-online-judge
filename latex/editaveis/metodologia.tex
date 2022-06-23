@@ -1,0 +1,352 @@
+\chapter{Metodologia}
+\label{cap:metodologia}
+
+Nesse capítulo serão abordados os métodos de desenvolvimento utilizados para o desenvolvimento do GOJ. Também serão abordadas, as tecnologias e ferramentas utilizadas durante o desenvolvimento. Além disso, se encontra nesse capítulo outras metodologias de levantamento de dados sobre juízes \textit{online}.
+
+\section{Levantamento de requisitos}
+\label{sec:levantamentoDeRequisitos}
+
+Antes e durante o desenvolvimento do GOJ, foi necessário realizar um levantamento de requisitos. Essa etapa é importante para obter detalhadamente os recursos que englobam a aplicação \cite{young2002recommended}.
+
+Foram utilizadas algumas técnicas para o levantamento de requisitos. Abordagens Discutidas por \citeonline{young2002recommended}. Semanalmente, foram feitas entrevistas para entendimento do sistema. Durante algumas dessas semanas, foram feitas prototipagens para assegurar o correto andamento do desenvolvimento.
+
+Os requisitos da aplicação levantados se dividem em três principais, descritos na Tabela \ref{table:reqGerais}:
+
+\begin{table}[ht]
+    \caption{Requisitos gerais}
+    \centering
+    \label{table:reqGerais}
+    \begin{tabular}{ |p{0.5cm}|p{3cm}|p{10cm}|  }
+        \hline
+        
+        \textit{\textbf{Id}} & 
+        \textbf{Tópico} & 
+        \textbf{Requisito} \\
+        \hline
+        
+        1 & 
+        Armazenamento   & 
+        É necessário armazenar um número limitado de questões e eventos das edições das maratonas UnB de programação, com atualização não frequente.  \\
+        \hline
+        
+        2 & 
+        Juiz & 
+        O usuário deve conseguir enviar sua solução em código para ela ser julgada, retornando um veredicto de sua submissão.  \\ 
+        \hline
+        
+        3 & 
+        Interface & 
+        O usuário deve conseguir ter acesso aos problemas e eventos.  \\
+        \hline
+    \end{tabular}
+
+\end{table}
+
+Os requisitos citados na Tabela \ref{table:reqGerais} englobam a aplicação. Contudo, são requisitos não detalhados e não específicos; esse fator, pode gerar ambiguidade ou incompletude para os mesmos, como salienta ``[\dots] Cada requisito deve ser necessariamente, verificável, atingível, inequívoco, completo, consistente, rastreável, conciso, livre de implementação[\dots]''\footnote{\textit{``[\dots] Each requirement should be necessary, verifiable, attainable, unambiguous, complete, consistent, traceable, concise, implementation-free [\dots]''}} \cite[p.9, tradução nossa]{young2002recommended}.
+
+Com base do exposto os requisitos foram divididos em requisitos menores e mais específicos. Com isso, mais detalhes foram listados na busca de uma maior completude e clareza. Os requisitos menores serão descritos nas seguintes subseções: \nameref{subsec:storage}, \nameref{subsec:juiz} e \nameref{subsec:ui}.
+
+\subsection{Armazenamento das questões e eventos}
+\label{subsec:storage}
+
+Esse módulo do sistema é responsável pelo armazenamento das questões, enunciados e eventos. Essa parte do \textit{software} deve ser responsável por disponibilizar essas informações para os outros módulos. Na Tabela \ref{table:reqArmazenamento} se encontram os requisitos levantados dessa parte da aplicação:
+
+\begin{table}[ht]
+    \caption{Requisitos de armazenamento}
+    \centering
+    \label{table:reqArmazenamento}
+    \begin{tabular}{ |p{0.6cm}|p{3cm}|p{10cm}|  }
+        \hline
+        
+        \textbf{Id} & 
+        \textbf{Tópico} & 
+        \textbf{Requisito} \\
+        \hline
+        
+        1.1 & 
+        Armazenamento   & 
+        As questões devem possuir título, enunciado, tempo limite de execução, limite de memória utilizado pelo programa, lista de rótulos que categorizam o problema, ID predefinido para localização das questões e identificação e lista de entradas e saídas de teste. \\
+        \hline
+        
+        1.2 & 
+        Armazenamento & 
+        Os eventos devem possuir uma data, que identifica quando o evento aconteceu, um nome e uma lista de problemas, tal como o rótulo do problema naquele evento ex: “Questão A”  \\ 
+        \hline
+        
+        1.3 & 
+        Armazenamento & 
+        O sistema precisa conseguir fazer uma busca por nome, rótulo ou evento.  \\
+        \hline
+    \end{tabular}
+
+\end{table}
+
+Os requisitos citados na Tabela \ref{table:reqArmazenamento} tem uma granularidade maior que os citados na Tabela \ref{table:reqGerais}. Com isso, o desenvolvimento das funcionalidades se torna mais preciso, evitando que expressões genéricas gerem ambiguidades com as necessidades da aplicação.
+
+\subsection{Juiz das questões}
+\label{subsec:juiz}
+
+Esse módulo do sistema é responsável por julgar um problema. Ao enviar um código para ser julgado o sistema deve processá-lo, rodá-lo na linguagem escolhida e comparar com as soluções esperadas. Na Tabela \ref{table:reqJuiz}, estão os requisitos levantados desse módulo.
+
+\begin{table}[ht]
+    \caption{Requisitos do juiz}
+    \centering
+    \label{table:reqJuiz}
+    \begin{tabular}{ |p{0.6cm}|p{2cm}|p{11cm}|  }
+        \hline
+        
+        \textbf{Id} & 
+        \textbf{Tópico} & 
+        \textbf{Requisito} \\
+        \hline
+        
+        2.1 & 
+        Juiz & 
+        O sistema deve receber arquivos ou textos contendo códigos em linguagens de programação pré, definidas. \\ 
+        \hline
+        
+        2.2 & 
+        Juiz & 
+        As principais linguagens suportadas pelo sistema devem ser C, C++, Java e Python.  \\
+        \hline
+        
+        2.3 & 
+        Juiz & 
+        Os arquivos/textos recebidos devem ser executados com uma lista de entradas e saídas esperadas. \\
+        \hline
+        
+        2.4 & 
+        Juiz & 
+        O sistema deve conseguir saber a memória e tempo utilizados para execução do programa; dependendo da memória e do tempo de execução do código o veredito pode mudar de aceito para não aceito. \\
+        \hline
+    \end{tabular}
+\end{table}
+
+Os requisitos citados na Tabela \ref{table:reqJuiz} correspondem ao módulo que julgará os códigos enviados pelos usuários. Os vereditos retornados podem ser AC, WA, TLE o MLE (\ref{sec:juizesOnline}).
+
+O comportamento desse módulo é o comportamento de um juiz eletrônico. Com isso essa parte do sistema se assimila bastante ao BOCA, sistema desenvolvido para realização de maratonas de programação \cite{de2004boca}; além disso, ele também é utilizado em disciplinas de programação na graduação \cite{francisco2016juiz}.
+
+
+
+\subsection{\textit{Interface} de usuário}
+\label{subsec:ui}
+
+Esse módulo do sistema corresponde a parte gráfica da aplicação. Nele, as informações dos outros módulos ficam visíveis para o usuário; portanto os requisitos presentes nesse módulo foram requisitos visuais, que estão descritos na Tabela \ref{table:reqInterface}:
+
+\begin{table}[ht]
+    \caption{Requisitos da interface}
+    \centering
+    \label{table:reqInterface}
+    \begin{tabular}{ |p{0.6cm}|p{3cm}|p{10cm}|  }
+        \hline
+        
+        \textbf{Id} & 
+        \textbf{Tópico} & 
+        \textbf{Requisito} \\
+        \hline
+        
+        3.1 & 
+        Interface   & 
+        As informações das questões devem estar disponíveis ao usuário, podendo conter formulas matemáticas e imagens. \\
+        \hline
+        
+        1.2 & 
+        Armazenamento & 
+        Os eventos devem ser apresentados ao usuário de maneira organizada, com a lista dos respectivos problemas dos eventos.  \\ 
+        \hline
+        
+        1.3 & 
+        Armazenamento & 
+        As informações de dicas e tutoriais das questões dever ser escondidas do usuário e disponíveis apenas se o usuário optar por elas.  \\
+        \hline
+    \end{tabular}
+
+\end{table}
+
+Os requisitos na Tabela \ref{table:reqInterface} descrevem como a \textit{interface} deve ser. Ela se assemelha a juízes \textit{onlines} presentes hoje, porém um foco direcionado para essa \textit{interface} é ser amigável para estudantes iniciantes em programação.
+
+\section{Arquitetura}
+\label{sec:arquitetura}
+
+A arquitetura escolhida para execução do GOJ foi a de micro-serviços, separando a aplicação em módulos com pequenos conjuntos de responsabilidades individuais. Os módulos escolhidos foram os seguintes:
+
+\begin{enumerate}
+    \item Juiz
+    \item \textit{API} 
+    \item Interface
+\end{enumerate}
+
+O desenvolvimento foi realizado com o auxílio do serviço na nuvem \textit{Amazon AWS}\footnote{Disponível em: https://aws.amazon.com/}, que disponibiliza algumas ferramentas, portanto além dos 3 micro-serviços citados acima, os serviços da nuvem também fazem parte do funcionamento da aplicação.
+
+\subsection{Juiz} 
+\label{subsec:juiz_arq}
+
+A responsabilidade do módulo Juiz é: executar arquivos ou textos em uma linguagem de programação, com uma lista de entradas e saídas esperadas. Além disso, é responsabilidade desse módulo retornar ao usuário um veredito de execução, de acordo com um tempo de execução limite, limite de memória permitido e saídas esperadas. Esse módulo realiza o papel de um juiz eletrônico e seu comportamento é baseado nos requisitos da Tabela \ref{table:reqJuiz}.
+
+O sistema foi desenvolvido em linguagem \textit{bash}, utilizando a ferramenta \textit{moj tools}\footnote{Disponível em: https://github.com/cd-moj/mojtools} para processar os problemas e receber o veredicto, e ferramentas do \textit{AWS CLI}\footnote{Disponível em: https://aws.amazon.com/cli/} para realizar a comunicação com a \textit{API} e recuperação de alguns arquivos necessários para sua execução. Os recursos utilizados do \textit{AWS CLI} foram o \textit{Simple Queue Service} \textit{(SQS)}, o \textit{Simple Notification Service} \textit{(SNS)} e o \textit{Simple Storage Service} \textit{(S3)}.
+As submissões que precisam ser julgadas são enviadas para uma fila \textit{SQS}, o sistema lê as informações da fila e as processa. Para isso, é feita a recuperação do código-fonte e das entradas e saídas esperadas, armazenados no \textit{S3}, e executa a ferramenta \textit{moj tools}, o resultado da execução é publicado em um tópico \textit{SNS} para ficar disponível para \textit{API} processar essa informação.
+
+Por esse módulo ser um serviço separado da \nameref{subsec:api}, não é necessária sua exposição a \textit{web}, além disso, as filas \textit{SQS} realizam o controle de concorrência caso mais de um consumidor esteja acessando esse recurso, possibilitando uma maior facilidade para escalonar o sistema. Ou seja, caso seja necessário mais poder de processamento ou paralelismo para julgar as questões, basta rodar o Juiz em uma máquina adicional diferente, sem se preocupar com a concorrência entre os consumidores e a fila SQS. 
+
+\subsection{API} 
+\label{subsec:api}
+
+O módulo da \textit{API} é responsável por fazer uma ponte de comunicação com a \textit{interface}, disponibilizando as informações armazenadas e recebendo arquivos para serem julgados pelo juiz. %% TODO escrever mais
+
+Esse sistema foi desenvolvido utilizando o \textit{.Net Frameweork} com \textit{C\#} de linguagem de programação principal. Além disso, é feita uma comunicação com um banco de dados \textit{MongoDB}, para o armazenamento das informações de questões, eventos e submissões. Assim como o \nameref{subsec:juiz_arq} são utilizados os serviços \textit{AWS} para a comunicação com os recursos da nuvem. 
+
+Esse sistema é exposto via \textit{web} para que uma comunicação com a \nameref{subsec:interface}, a comunicação é feita via protocolo HTTP, para o recebimento e disponibilização de informações. Para melhora da compatibilidade e facilidade com a entrega desse sistema foi utilizado a ferramenta \textit{Docker}, um sistema de virtualização que permite que o projeto seja executado em qualquer plataforma que suporte a ferramenta.
+
+Os recursos utilizados da \textit{AWS} foram: O S3, para o \textit{upload} dos códigos fontes recebidos em um \textit{bucket}, que serão recuperados pelo \nameref{subsec:juiz_arq} quando o código for julgado, e o SQS, onde uma fila foi inscrita no tópico SNS, onde os vereditos das submissões são publicados pelo \nameref{subsec:juiz_arq}; a aplicação recebe os vereditos da fila e os processa em um \textit{Background Service}, atualizando o \textit{status} da submissão no banco de dados.
+
+\subsection{\textit{Interface} Web} 
+\label{subsec:interface}
+
+As responsabilidades do módulo de \textit{interface} é renderizar a \textit{interface} de usuário conforme as informações recebidas da \nameref{subsec:api}, além disso, a \textit{interface} também recebe as submissões dos usuários e envia os códigos para serem processados. Esse comportamento é baseado nos requisitos levantados na Tabela \ref{table:reqInterface}.
+%% TODO escrever mais 
+
+%% TODO referencias AWS na fundamentação teórica
+%% TODO referenciar protocolo HTTP na fundamentação teórica
+%% TODO referenciar Docker na fundamentação teórica
+%% TODO referencia Background Service na fundamentação teórica https://docs.microsoft.com/pt-br/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-6.0&tabs=visual-studio
+
+% TODO
+
+\section{Pesquisas de juízes online existentes}
+
+Nessa seção serão descritos os dados coletados de pesquisas conduzidas para o levantamento de juízes \textit{online} existentes. Além disso, está descrito funcionalidades e detalhes sobre os juízes pesquisados.
+
+\subsection{Seleção de juízes}
+\label{subsec:selecao_juizes}
+
+Antes das pesquisas, foi definido que um juiz \textit{online} seria, site ou página que armazena questões e possibilita o usuário enviar submissões dessas questões para elas serem testadas e um veredicto seja retornado. Foi feita uma seleção de juízes \textit{online} com base em pesquisa de termos no \textit{Google}\footnote{\url{https://www.google.com/}}, mecanismo de pesquisas \textit{online}, para a seleção de resultados foi considerado apenas os sites que se encaixam no termo juiz \textit{online} definido anteriormente. As buscas englobam as páginas 1 e 2 de pesquisa e cada busca teve resultados diferentes, que serão listados a seguir com base nos termos pesquisados, os itens estão enumerados em ordem de relevância determinada pelo mecanismo de pesquisa que lista os resultados mais relevantes primeiro, ou seja, os itens estão em ordem de aparição. Vale ressaltar que durante as buscas o mecanismo de pesquisa oferece páginas como anúncio, com uma grande relevância no mecanismo de busca, porém os anúncios da ferramenta de pesquisa não foram considerados nas escolhas, apenas os outros sites resultado das buscas.
+
+Primeiro temos a lista dos juízes listados com a busca do termo em inglês \textit{Online judge}:
+
+\begin{enumerate}
+    \item \textit{OnlineJudge}
+    \item \textit{Beecrowd}
+    \item \textit{Sphere Online Judge (SPOJ)}
+    \item \textit{PKU JudgeOnline}
+\end{enumerate}
+
+Esses foram os juízes listados com o termo \textit{Online judge}, o \textit{Online Judge}\footnote{\url{https://www.onlinejudge.org/}} um juiz \textit{online} também conhecido como \textit{UVa}, que teve seu nome alterado recentemente;
+o \textit{Beecrowd}\footnote{\url{https://www.beecrowd.com.br}}, que também é conhecido como URI, que também teve seu nome e endereço alterado recentemente; 
+o \textit{Sphere Online Judge (SPOJ)}\footnote{\url{https://www.spoj.com/}} e o \textit{PKU JudgeOnline}\footnote{\url{http://poj.org/}} um juiz \textit{online} da Universidade de Pequim.
+
+O segundo termo pesquisado foi o termo em inglês \textit{Online programming contests}, e os resultados foram:
+
+\begin{enumerate}
+    \item \textit{CodeChef}
+    \item \textit{Google's Coding Competitions}
+    \item \textit{Beecrowd}
+    \item \textit{Sphere Online Judge (SPOJ)}
+    \item \textit{Hackerearth}
+\end{enumerate}
+
+O novo termo foi pensando em sites que também realizam função de juiz \textit{online}, porém possuem competições de programação. Com isso temos alguns novos juízes diferentes dos da busca anterior, eles são: \textit{CodeChef}\footnote{\url{https://www.codechef.com/}}, um juiz \textit{online} com competições e que também armazena questões para posteriores práticas; \textit{Goolge's Coding Competitions}\footnote{\url{https://codingcompetitions.withgoogle.com/}}, site onde estão reunidos links para competições do Google como \textit{Kick Start}\footnote{\url{https://codingcompetitions.withgoogle.com/kickstart/about/}}, \textit{Hash Code}\footnote{\url{https://codingcompetitions.withgoogle.com/hashcode/about/}} e \textit{CodeJam}\footnote{\url{https://codingcompetitions.withgoogle.com/codejam/about/}}; e por fim o \textit{Hackerearth}\footnote{\url{https://www.hackerearth.com/}}, site usado para uma validação técnica de candidatos em entrevistas.
+
+O terceiro termo pesquisado foi outro termo em inglês \textit{Programming competitions and contests}, e os resultados foram:
+
+\begin{enumerate}
+    \item \textit{Google's Coding Competitions}
+    \item \textit{CodeChef}
+    \item \textit{Codeforces}
+    \item \textit{Hackerearth}
+\end{enumerate}
+
+A ideia do terceiro termo é ressaltar sites de competição, que com a segunda busca mostram que geralmente possuem a função de juiz \textit{online}, porém na terceira busca o único site novo que apareceu foi o \textit{Codeforces}\footnote{\url{https://codeforces.com/}}, um site mais voltado para competições, e que tem um vasto número de problemas para posteriores práticas.
+
+O quarto termo pesquisado foi ``juiz \textit{online} programação'', e os resultados foram:
+
+\begin{enumerate}
+    \item \textit{Beecrowd}
+    \item \textit{Neps Academy }
+    \item \textit{CodeBench}
+\end{enumerate}
+
+A ideia do termo é tentar encontrar juízes \textit{online} com questões em português, ou até mesmo o suporte brasileiro. Com o primeiro termo em português tivemos 2 novos resultados, \textit{Neps Academy}\footnote{\url{https://neps.academy/}} um site voltado para o ensino de programação, com aulas e questões para treino. O \textit{CodeBench}\footnote{\url{https://codebench.icomp.ufam.edu.br/}} site voltado para ensino, com criação de turma e inscrição de alunos.
+
+Também foram pesquisados os termos “programação” e “\textit{contests} de programação”, porém não foram encontrados novos resultados, apenas os já citados \textit{Beecrowd} e \textit{Neps Academy}. Com isso, dos juízes \textit{online} pesquisados temos a seguinte lista:
+
+\subsection{Detalhamento dos juízes}
+
+Dentre os juízes pesquisados se fez necessário um maior detalhamento das funcionalidades, e número de questões de cada um dos juízes. Para isso, algumas abordagens foram escolhidas, diferentes abordagens com base no juiz \textit{online}
+
+\subsubsection{\textit{Online Judge}}
+\label{subsubsec:met_online_judge}
+
+Para o levantamento dos problemas da plataforma foi acessado a aba \textit{Browse Problems}\footnote{\url{https://onlinejudge.org/index.php?option=com\_onlinejudge\&Itemid=8}} como disposto na Figura \ref{fig:online_judge_1} e em cada umas das categorias foi contado o número de problemas presentes como mostrado na Figura \ref{fig:online_judge_2}. Para contagem do número de problemas foi utilizado um \textit{script} em linguagem de programação \textit{Python}, disponível no apêndice \ref{appendix:script_oj}, com a estratégia de localizar o padrão em links de categorias e links de problemas. O primeiro padrão observado é que as pastas ficam em uma tabela, então localizando a tabela pelo \textit{HTML} da página, é possível encurtar a busca pelos links, o segundo padrão que vale ressaltar é que os problemas possuem o trecho \texttt{page=show\_problem} na \textit{(URL)}, e isso diferencia um link de outra pasta para o link de um problema.
+
+Para as demais funcionalidades foram levantadas simplesmente navegando pelo site, enviando problemas olhando a resposta e buscando por tutoriais e ferramentas adicionais no próprio site. O site possui links para ferramentas externas como \textit{uDebug}\footnote{\url{https://www.udebug.com/UVa/}}, plataforma que auxilia a solução dos problemas disponibilizado um código correto para comparação de entradas e saídas, e o \textit{uHunt} uma plataforma direcionada para o site \textit{Online Judge} que deixa a resolução de questões mais iterativa, mostrando estatísticas dos problemas resolvidos e separando as questões em categorias. 
+
+%% TODO terminar
+
+
+\subsubsection{\textit{Beecrowd}}
+\label{subsubsec:met_beecrowd}
+Para o levantamento de problemas no site Beecrowd, foi preciso acessar a \textit{URL} de categorias\footnote{\url{https://www.beecrowd.com.br/judge/pt/categories}} e o número de problemas é exibido na categoria “Listar todos” como mostra a Figura \ref{fig:beecrowd_1}
+
+%% TODO terminar
+
+\subsubsection{\textit{Codeforces}}
+\label{subsubsec:met_codeforces}
+
+Para o levantamento de problemas no \textit{codeforces} foi utilizado a \textit{API} pública do site\footnote{\url{https://codeforces.com/apiHelp}} e recuperando todos os problemas. As demais ferramentas no site foram observadas navegando e enviando questões.  O foco do site está em competições, e ocorrem competições semanalmente. Além disso, a maioria dos problemas possui tutoriais e os códigos e soluções de outras pessoas são abertos.
+
+%% TODO terminar
+
+\subsubsection{\textit{Sphere Online Judge}}
+\label{subsubsec:met_spot}
+
+Para o levantamento de questões no \textit{Sphere Online Judge}, foi acessado  o menu de problemas e nele foram localizadas 6 categorias: \textit{Classical}, \textit{Chalenge}, \textit{Partial}, \textit{Tutorial}, \textit{Riddle} e \textit{Basics}, como mostra a Figura \ref{fig:spoj}. Para o levantamento de número de questões foi acessado cada uma das categorias e contado o número de páginas por categoria. Com exceção da última página, as demais apresentam 50 problemas, portanto para ter um levantamento do número de problemas, foi contato o número de páginas, com exceção da última página, e considerado que teriam 50 problemas por página, logo após, foi adicionado o número de problemas da última página ao valor. 
+
+A categoria \textit{Classical}, possui 79 páginas, sendo que a última página possui 50 problemas, a categoria \textit{Chalenge} possui 4 páginas, com a última página contendo 10 problemas, a categoria \textit{Partial} possui 4 páginas, com a última página contendo 30 problemas, a categoria \textit{Tutorial} possui 28 páginas, sendo que a última página possui 49 problemas, a categoria \textit{Riddle} possui uma única página com 35 problemas, e por fim, a categoria \textit{Basics} possui 7 páginas com a última página contendo 3 problemas. Levando em conta que cada página possui 50 problemas essa estimativa da, o valor de 6027 problemas no juiz.  
+
+%% TODO terminar
+
+\subsubsection{\textit{PKU Judge Online}}
+\label{subsubsec:met_pku}
+
+Para o levantamento de número de problemas no \textit{PKU Judge Online} foi acessado a página de problemas como mostrado na Figura \ref{fig:pku} e considerando que cada página possui 100 problemas, com exceção da última que possui 54 problemas, o total de problemas encontrados foram 3054 problemas.
+
+Para o levantamento das funções foi feita uma navegação no site e acessando as funcionalidades foi possível coletar algumas informações. Ao enviar uma questão, e é possível perceber que o site aceita algumas linguagens e compiladores como mostrado na Figura \ref{fig:pku_2}, porém não foi possível receber o veredicto de uma questão enviada, pois no dia 5 de abril as 11:43, horário onde o teste foi feito, o site retornava um erro ao enviar a questão;
+
+%% TODO terminar
+
+
+\subsubsection{\textit{Code Chef}}
+\label{subsubsec:met_code_chef}
+
+Para o levantamento do número de problemas no site \textit{Code Chef}, foi acessado a página de problemas do site e dentro dela utilizando o filtro \textit{"All Levels"}, que mostra os problemas de todos os níveis como mostrado na Figura \ref{fig:code_chef_1}. Com isso foi possível ver o número de problemas mais abaixo como mostra na Figura \ref{fig:code_chef_2}, com um total de 3363 problemas.
+
+%% TODO terminar
+
+\subsubsection{\textit{Google's Coding Competitions}}
+\label{subsubsec:met_google}
+
+Para o levantamento do número de problemas no \textit{Google's coding competition} foram separados 3 categorias diferentes, correspondentes aos 3 eventos anuais do Google: \textit{Code Jam}, \textit{KickStart} e \textit{HashCode}. Na categoria \textit{Code Jam} existem 8 rounds diferentes, dentre eles rounds de prática, classificatórios e os oficiais. O número de problemas das finais variam de 5 a 6 problemas, enquanto nos demais rounds varia de 3 a 4 problemas, como até hoje foram efetuados 4 competições, começando em 2018, foi estimado o total de 120 problemas para essa categoria. Na categoria \textit{KickStart} são 8 rounds, cada round contendo 3 problemas. A competição teve início em 2018 totalizando 4 edições, com isso o número de problemas é 96. Por fim na categoria \textit{HashCode} possui apenas 2 problemas por edição, um problema do round classificatório e outro do round final, totalizando 8 problemas nas 4 edições que iniciaram em 2018.
+
+%% TODO terminar
+
+\subsubsection{\textit{Hackerearth}}
+\label{subsubsec:met_hackerearth}
+
+Para o levantamento do número de problemas no \textit{Hackerearth} foi acessado a página de problemas, e é possível ver que cada uma das páginas exibe 20 problemas, com exceção da última que exibe 6, com o total de  77 páginas o número de problemas estimado foi 1526 nessa plataforma.
+
+
+%% TODO terminar
+
+\subsubsection{\textit{Neps Academy}}
+\label{subsubsec:met_neps_academy}
+
+Para o levantamento do número de questões no \textit{Neps Academy} foi acessado a página de problemas, que possui 67 páginas e 16 problemas por página, com exceção da última página, que possui 13 problemas, com isso foi levantado o total de 1069 problemas.
+
+%% TODO terminar
+
+\subsubsection{\textit{CodeBench}}
+\label{subsubsec:met_codebench}
+
+Não foi possível fazer o levantamento do número de problemas na plataforma \textit{CodeBench} pelo fato dos problemas serem privados. A plataforma disponibiliza para professores a criação de turma onde o acesso é controlado, por conta disso não foi feita uma estimativa do número de problemas na plataforma.
+
+%% TODO terminar
