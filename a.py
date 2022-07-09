@@ -1,55 +1,3 @@
-\begin{apendicesenv}
-
-\partapendices
-
-\chapter{Figuras}
-\label{appendix:a}
-
-\begin{figure}[H]
-    \centering
-    \caption{Interface — envio de questão}
-    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/sendQuestion1.eps}
-    \label{fig:sendQuestion1}
-\end{figure}
-\begin{center}
-    {\tiny Fonte: elaboração nossa}
-\end{center}
-    
-\begin{figure}[H]
-    \centering
-    \caption{Interface — entradas e saídas da questão}
-    \includegraphics[keepaspectratio=true,scale=0.35]{figuras/questionInputs.eps}
-    \label{fig:questionInputs}
-\end{figure}
-\begin{center}
-    {\tiny Fonte: elaboração nossa}
-\end{center}
-
-\begin{figure}[H]
-    \centering
-    \caption{Texto bruto enunciado}
-    \includegraphics[keepaspectratio=true,scale=0.65]{figuras/statementText.eps}
-    \label{fig:statementText}
-\end{figure}
-\begin{center}
-    {\tiny Fonte: elaboração nossa}
-\end{center}
-
-\begin{figure}[H]
-    \centering
-    \caption{Interface — Enunciado da questão}
-    \includegraphics[keepaspectratio=true,scale=0.35]{figuras/questionStatement2.eps}
-    \label{fig:questionStatement2}
-\end{figure}
-\begin{center}
-    {\tiny Fonte: elaboração nossa}
-\end{center}
-
-\chapter{Scripts}
-\label{appendix:b}
-
-\begin{lstlisting}[language=Python, caption={Script para coletar número de problemas — Online Judge}, label={appendix:script_oj}]
-
 import urllib.request
 import urllib.error
 import urllib.parse
@@ -128,13 +76,3 @@ while len(links) > 0:
 
 for t in threads:
     t.join()
-    
-\end{lstlisting}
-
-\begin{lstlisting}[caption={Script para coletar número de problemas — Codeforces}, label={appendix:script_cf}, language=bash]
-problems_url="https://codeforces.com/api/problemset.problems"
-response=$(curl --location --request GET $problems_url)
-echo $response | jq -r ".result.problems | length"
-\end{lstlisting}
-
-\end{apendicesenv}

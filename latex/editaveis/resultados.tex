@@ -6,7 +6,7 @@ Este capítulo aborda os resultados de pesquisa e resultados de desenvolvimento 
 \section{Pesquisa de juízes}
 \label{sec:pesquisa_juizes}
 
-Nessa seção serão abordados resultados de pesquisa que motivam a criação de um novo juiz online. Esta seção está dividida em duas subseções; a subseção \nameref{subsec:resultados_selecao_juizes}, que mostra os juízes selecionados para as análises; a subseção \nameref{subsec:funcionalidades}, que apresenta funcionalidades relevantes para o GOJ e a presença delas nos juízes selecionados.
+Nessa seção serão abordados resultados de pesquisa que motivam a criação de um novo juiz online. Esta seção está dividida em duas subseções: a subseção \nameref{subsec:resultados_selecao_juizes}, que mostra os juízes selecionados para as análises; a subseção \nameref{subsec:funcionalidades}, que apresenta funcionalidades relevantes para o GOJ e a presença delas nos juízes selecionados.
 
 \subsection{Seleção de juízes}
 \label{subsec:resultados_selecao_juizes}
@@ -105,11 +105,11 @@ Isto posto, a aplicação foi dividida em 4 partes, o \textit{gamma judge ui}, q
 
 Esse módulo da aplicação foi dividido em 3 projetos: \textit{API}, \textit{Infrastructure} e \textit{Workers}. A \textit{API} é responsável por efetuar a comunicação externa da aplicação via \textit{HTTP}; a \textit{Infrastructure} é responsável por concentrar a infraestrutura do sistema, como a comunicação com o banco de dados; e os \textit{Workers} são funções executadas periodicamente — nesse caso, para fazer o acesso com o sistema de filas.
 
-Na Figura \ref{fig:judge_ui_folders} é apresentado o esquema de pastas do projeto, cada um dos blocos representa um projeto do \textit{.NET} e a organização das principais pastas ou arquivos. Na Api temos 2 pastas principais: \textit{“Controllers”}, que armazena os \textit{endpoints} expostos, onde é feita a comunicação de outros serviços; e \textit{“Models”}, onde estão as estruturas de algumas requisições. \textit{“Infrastructure”} possui em maioria funções para comunicação com o banco de dados; já  \textit{“Workers”}, possui um importante arquivo que faz a comunicação com o sistema de filas e recebe o veredicto das questões julgadas.
+Na Figura \ref{fig:judge_ui_folders} é apresentado o esquema de pastas do projeto, cada um dos blocos representa um projeto do \textit{.NET} e a organização das principais pastas ou arquivos. Na Api temos 2 pastas principais: \textit{“Controllers”}, que armazena os \textit{endpoints} expostos, onde é feita a comunicação de outros serviços; e \textit{“Models”}, onde estão as estruturas de algumas requisições. \textit{“Infrastructure”} possui em sua maioria funções para comunicação com o banco de dados; já  \textit{“Workers”}, possui um importante arquivo que faz a comunicação com o sistema de filas e recebe o veredicto das questões julgadas.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/gamma_judge_api_folders.eps}
+    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/gamma_judge_api_folders.png}
     \caption{Esquema de pastas Gamma Judge API}
     \label{fig:judge_ui_folders}
 \end{figure}
@@ -117,7 +117,7 @@ Na Figura \ref{fig:judge_ui_folders} é apresentado o esquema de pastas do proje
 \subsubsection{Módulo de problemas}
 \label{subsubsec:moduloDeProblemas}
 
-O módulo de problemas é responsável pelos problemas e todas as funcionalidades relacionadas às informações expostas para interface da aplicação. A Figura \ref{fig:problems_endpoints} representa os endereços expostos via API pelo módulo de problemas.
+O módulo de problemas é responsável pelos problemas e todas as funcionalidades relacionadas às informações expostas para a interface da aplicação. A Figura \ref{fig:problems_endpoints} representa os endereços expostos via API pelo módulo de problemas.
 
 \begin{figure}[H]
     \centering
@@ -145,7 +145,7 @@ O comportamento desse módulo é similar ao do módulo de problemas (Subseção 
 \subsection{Gamma Judge UI}
 \label{sec:gamaJudgeUI}
 
-A interface da aplicação é um site, com páginas que abrangem as questões e os eventos. O objetivo da interface é organizar as informações da API para o usuário, e ser uma porta de entrada para as submissões. O site pode ser dividido em 2 diferentes módulos: ``Questões'', que representam as páginas para apresentar informações sobre os problemas cadastrados na plataforma; e ``Eventos'', com as páginas responsáveis por apresentar as informações sobre os eventos. 
+A interface da aplicação é um site, com páginas que abrangem as questões e os eventos. O objetivo da interface é organizar as informações da API para o usuário, e ser uma porta de entrada para as submissões. O site pode ser dividido em 2 diferentes módulos: ``Questões'', que representa as páginas para apresentar informações sobre os problemas cadastrados na plataforma; e ``Eventos'', com as páginas responsáveis por apresentar as informações sobre os eventos. 
 
 % A interface de usuário se concentra em um site. A aplicação tem o foco de ser simples e possuir módulos facilmente editáveis e substituíveis. Com base nisso a ferramenta de desenvolvimento da interface foi o \textit{React} \cite{rawat2020react}, utilizando \textit{Typescript} \cite{richards_et_al:CTTS} como linguagem principal.
 
@@ -165,9 +165,9 @@ O módulo de questões na interface é responsável por disponibilizar ao usuár
     \label{fig:question3}
 \end{figure}
 
-A interface das questões é dividida em algumas partes: o menu lateral, observável na Figura \ref{fig:sendQuestion1} no Apêndice \ref{appendix:a}; as entradas e saídas, disponíveis na Figura \ref{fig:questionInputs} no Apêndice \ref{appendix:a}; o enunciado, disponível na Figura \ref{fig:questionStatement2} no Apêndice \ref{appendix:a}.
+A interface das questões é dividida em algumas partes: o menu lateral, observável na Figura \ref{fig:sendQuestion1} no Apêndice \ref{appendix:a}; as entradas e saídas, disponíveis na Figura \ref{fig:questionInputs} no Apêndice \ref{appendix:a}; e o enunciado, disponível na Figura \ref{fig:questionStatement2} no Apêndice \ref{appendix:a}.
 
-Em juízes online elementos não textuais são bastante comuns para dar mais riquezas e detalhes às questões. Assim sendo, é comum a utilização de imagens, fórmulas matemáticas, e elementos para enfatizar trechos das questões, como textos em negrito ou itálico. Além de apresentar as informações do problema a interface também é responsável por representar elementos da API, em HTML\footnote{RAGGETT, Dave et al. HTML 4.01 Specification. W3C recommendation, v. 24, 1999.}  ou LaTEX\footnote{LAMPORT, Leslie. LaTeX. Company Cyfronet, 1991.}, em elementos não textuais; a Figura \ref{fig:questionStatement} exemplifica a utilização desses recursos.
+Em juízes online elementos não textuais são bastante comuns para dar mais riquezas e detalhes às questões. Assim sendo, é comum a utilização de imagens, fórmulas matemáticas, e elementos para enfatizar trechos das questões, como textos em negrito ou itálico. Além de apresentar as informações do problema a interface também é responsável por representar elementos da API\footnote{Ver em \ref{{subsec:arquitetura_judge_ui}}}, em HTML\footnote{RAGGETT, Dave et al. HTML 4.01 Specification. W3C recommendation, v. 24, 1999.}  ou LaTEX\footnote{LAMPORT, Leslie. LaTeX. Company Cyfronet, 1991.}, em elementos não textuais; a Figura \ref{fig:questionStatement} exemplifica a utilização desses recursos.
 
 % Para entregar flexibilidade na utilização de elementos não textuais foi utilizado o recurso NPM. A biblioteca utilizada para a visualização de elementos textuais foi o \textit{\textbf{react-latex}} \cite{reactlatex}. Essa biblioteca da flexibilidade ao usuário para utilizar elementos presentes na linguagem LaTEX e a utilização de \textit{tags} HTMLpara a inclusão de elementos não textuais como imagens.
 % TODO -- Colocar na metodologia
@@ -185,7 +185,7 @@ A Figura \ref{fig:questionStatement} apresentada foi renderizada automaticamente
 \subsubsection{Eventos}
 \label{subsec:eventos}
 
-O módulo de eventos concentra as informações referentes a um determinado evento da Maratona UnB de Programação. Nesse módulo está concentrada a lista de questões do evento e a data em que ocorreu. As questões de um evento podem ser futuramente reaproveitadas em outras, portanto, também é apresentado a origem da questão, podendo ser original do evento ou podendo apresentar onde ela teve origem. A Figura \ref{fig:maratonaUnB} demostra a maneira que as informações são disponibilizadas ao usuário na tela.
+O módulo de eventos concentra as informações referentes a um determinado evento da Maratona UnB de Programação. Nesse módulo está concentrada a lista de questões do evento e a data em que ocorreu. As questões de um evento podem ser futuramente reaproveitadas em outras, portanto, também é apresentado a origem da questão, que pode ser original do evento ou apresentar onde ela teve origem. A Figura \ref{fig:maratonaUnB} demostra a maneira que as informações são disponibilizadas ao usuário na tela.
 
 \begin{figure}[H]
     \centering
@@ -195,7 +195,7 @@ O módulo de eventos concentra as informações referentes a um determinado even
 \end{figure}
 
 
-Como demonstrado na Figura \ref{fig:maratonaUnB}, são disponibilizadas informações do rótulo da questão\footnote{O rótulo é representado na Figura \ref{fig:maratonaUnB} com um ícone de balão}, título, marcações\footnote{As marcações são representadas na Figura \ref{fig:maratonaUnB} como \textit{tags}} e o evento original da questão. Diferente do que demonstra a Figura \ref{fig:maratonaUnB}, é possível que nos eventos as questões sejam marcadas com rótulos diferentes das letras do alfabeto. Além disso, o campo ``Evento original'' pode mostrar um botão para o evento em que aquele problema foi criado, caso ele tenha sido re-aproveitado nessa maratona.
+Como demonstrado na Figura \ref{fig:maratonaUnB}, são disponibilizadas informações do rótulo da questão\footnote{O rótulo é representado na Figura \ref{fig:maratonaUnB} com um ícone de balão}, título, marcações\footnote{As marcações são representadas na Figura \ref{fig:maratonaUnB} como \textit{tags}} e o evento original da questão. Diferentemente do que demonstra a Figura \ref{fig:maratonaUnB}, é possível que nos eventos as questões sejam marcadas com rótulos diferentes das letras do alfabeto. Além disso, o campo ``Evento original'' pode mostrar um botão para o evento em que aquele problema foi criado, caso ele tenha sido re-aproveitado nessa maratona.
 
 \subsection{Gamma Judge Tools}
 \label{sec:gamaJudgeTools}
@@ -204,7 +204,7 @@ Essa parte do sistema é responsável por julgar as submissões enviadas e retor
 
 \begin{figure}[H]
     \centering
-    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/gamma_judge_tools_diagram.eps}
+    \includegraphics[keepaspectratio=true,scale=0.5]{figuras/gamma_judge_tools_diagram.png}
     \caption{Gamma judge tools — Diagrama}
     \label{fig:judge_tools_diagram}
 \end{figure}
@@ -214,27 +214,27 @@ Na Figura \ref{fig:judge_tools_diagram}, a aplicação lê do sistema de filas u
 \subsection{Gamma Judge Admin}
 \label{sec:gamaJudgeAdmin}
 
-A interface \textit{Gamma Judge Admin} auxilia o uso da API, com mecanismos para ler, criar, editar e deletar um evento ou um problema, esse módulo auxilia a manutenção e edição do conteúdo dos problemas armazenados. Sua estrutura se divide em 3 páginas:\textit{ “HomePage”}, que possui apenas botões para as outras páginas; \textit{``ProblemPage''}, que possui os mecanismos descritos, direcionados para os problemas; \textit{``ContestPage''}, que se assemelha à \textit{``ProblemPage''}, porém está direcionada para eventos.
+A interface \textit{Gamma Judge Admin} auxilia o uso da API, com mecanismos para ler, criar, editar e deletar um evento ou um problema, esse módulo auxilia a manutenção e edição do conteúdo dos problemas armazenados. Sua estrutura se divide em 3 páginas:\textit{ “HomePage”}, que possui apenas botões para as outras páginas; \textit{``ProblemPage''}, que possui os mecanismos descritos, direcionados para os problemas; e \textit{``ContestPage''}, que se assemelha à \textit{``ProblemPage''}, porém está direcionada para eventos.
 
 \subsubsection{Problem Page}
 
-A pagina de problemas acessa a API apresentada na Subseção \ref{sec:gammaJudgeApi}, tento como base o \textit{customId}, uma sequência de caracteres que identifica cada um dos problemas unicamente. A Figura \ref{fig:judge_admin_problem} representa a página descrita: com o botão \textit{``GET''}, em verde, e o \textit{customId} preenchido, é possível recuperar as informações de um problema; \textit{``PUT''}, em azul, cria, caso não exista, ou sobrescreve as informações do problema; \textit{``DELETE''}, em vermelho, apaga o problema.
+A pagina de problemas acessa a API apresentada na Subseção \ref{sec:gammaJudgeApi}, que tem como base o \textit{customId}, uma sequência de caracteres que identifica cada um dos problemas unicamente. A Figura \ref{fig:judge_admin_problem} representa a página descrita: com o botão \textit{``GET''}, em verde, e o \textit{customId} preenchido, é possível recuperar as informações de um problema; \textit{``PUT''}, em azul, cria, caso não exista, ou sobrescreve as informações do problema; \textit{``DELETE''}, em vermelho, apaga o problema.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[keepaspectratio=true,scale=0.32]{figuras/problem_page.eps}
+    \includegraphics[keepaspectratio=true,scale=0.32]{figuras/problem_page.png}
     \caption{Gamma judge Admin — ProblemPage}
     \label{fig:judge_admin_problem}
 \end{figure}
 
 \subsubsection{Contest Page}
 
-A página de eventos tem o comportamento similar a página de problemas, com os mesmos botões e mesmo funcionamento, porém com menos informações. Na página de eventos é possível adicionar ou remover problemas ao evento utilizando o \textit{customId} do problema e o \textit{identifier}, será o identificador do problema naquele evento, como mostra na Figura \ref{fig:judge_admin_contest}.
+A página de eventos tem o comportamento similar à página de problemas, com os mesmos botões e mesmo funcionamento, porém com menos informações. Na página de eventos é possível adicionar ou remover problemas ao evento utilizando o \textit{customId} do problema e o \textit{identifier}, será o identificador do problema naquele evento, como demonstra a Figura \ref{fig:judge_admin_contest}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[keepaspectratio=true,scale=0.45]{figuras/contest_page.eps}
+    \includegraphics[keepaspectratio=true,scale=0.45]{figuras/contest_page.png}
     \caption{Gamma judge Admin — ContestPage}
     \label{fig:judge_admin_contest}
 \end{figure}
-Conforme apresentado, a ferramenta possui as funcionalidades almejadas, apresentadas na subseção \ref{subsec:funcionalidades}, possibilitando a sua utilização para armazenamento das questões das maratonas UnB de programação. Com isso, se torna mais interessante sua utilização como projeto GOJ, ao utilizar um dos juízes online presente hoje.
+Conforme apresentado, a ferramenta possui as funcionalidades almejadas, apresentadas na subseção \ref{subsec:funcionalidades}, possibilitando a sua utilização para armazenamento das questões das maratonas UnB de programação. Com isso, a utilização do projeto GOJ supre as funcionalidades não observadas nos juízes online pesquisados, fato que justifica sua efetividade e adoção.
