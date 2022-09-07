@@ -18,6 +18,12 @@
 \usepackage{float}
 \usepackage[table,xcdraw]{xcolor}
 \usepackage{listings}
+\usepackage{threeparttable}
+\usepackage{float}
+\floatstyle{plaintop} % Coloca caption no topo
+\newfloat{quadro}{htbp}{lop}
+\floatname{quadro}{Quadro}
+\newcommand{\listofquadros}{\listof{quadro}{Lista de Quadros}}
 
 \input{fixos/comandos}
 \usepackage{fixos/customizacoes}
