@@ -11,17 +11,16 @@ Programação competitiva é um termo usado para competições, onde os particip
 
 \begin{quote}
 
-The core directive in ‘Competitive Programming’ is this: “Given well-known Computer Science (CS) problems, solve them as quickly as possible!”.
+\textit{The core directive in ‘Competitive Programming’ is this: “Given well-known Computer Science (CS) problems, solve them as quickly as possible!”.}
 
-Let’s digest the terms one by one. The term ‘well-known CS problems’ implies that in competitive programming, we are dealing with solved CS problems and not research problems (where the solutions are still unknown). Some people (at least the problem author) have definitely solved these problems before. To ‘solve them’ implies that we must push our CS knowledge to a certain required level so that we can produce working code that can solve these problems too—at least in terms of getting the same output as the problem author using the problem author’s secret test data within the stipulated time limit. The need to solve the problem ‘as quickly as possible’ is where the competitive element lies—speed is a very natural goal in human behavior.
+\textit{Let’s digest the terms one by one. The term ‘well-known CS problems’ implies that in competitive programming, we are dealing with solved CS problems and not research problems (where the solutions are still unknown). Some people (at least the problem author) have definitely solved these problems before. To ‘solve them’ implies that we must push our CS knowledge to a certain required level so that we can produce working code that can solve these problems too—at least in terms of getting the same output as the problem author using the problem author’s secret test data within the stipulated time limit. The need to solve the problem ‘as quickly as possible’ is where the competitive element lies—speed is a very natural goal in human behavior.}
 \cite[p.1]{halim2013competitive}
 \end{quote}
 
 Maratona de programação é um termo adaptado do inglês \textit{Programing Contest}; são competições, utilizando programação competitiva. As competições possuem uma lista de problemas de programação competitiva, onde os competidores devem tentar resolvê-los no menor tempo possível. Para cada tentativa de resolução do problema, o competidor consegue acompanhar se sua solução apresentou o comportamento esperado ou não\footnote{Além de ter as respostas esperadas em cada um dos casos de testes ocultos, é importante que a solução utilize os recursos de tempo e memória estabelecidos no problema. Logo, uma solução que apresentou o comportamento esperado não se limita apenas as soluções com as saídas corretas para os casos de teste}; soluções incorretas ou que não apresentaram o comportamento esperado podem penalizar o competidor, encorajando que os competidores sejam não somente rápidos, como também precisos. Muitas maratonas de programação são em equipe, o que faz com que os competidores coloquem em prática não só os conhecimentos de ciência da computação, como também o trabalho em equipe.
 
 \begin{quote}
-It’s clear that a programming contest is, by its own definition, a competitive activity,
-where there are winners and others (not really losers, in general).[\dots]. Moreover, many of the programming contests are team competitions and they involve a lot of collaborative work to prepare them.
+\textit{It’s clear that a programming contest is, by its own definition, a competitive activity, where there are winners and others (not really losers, in general).[\dots]. Moreover, many of the programming contests are team competitions and they involve a lot of collaborative work to prepare them.}
 \cite[p.132]{revilla2008competitive}
 \end{quote}
 
@@ -64,11 +63,11 @@ Com a introdução de alunos aos juízes online, o ambiente de maratonas de prog
 \section{Arquitetura em micro-serviços}
 \label{sec:microServicos}
 
-A arquitetura de micro-serviços consiste em variados \textit{softwares} que trabalham independentemente. Em contraposição, existe a abordagem monolítica onde o serviço concentra todas as responsabilidades do software. De fato, a abordagem monolítica é bastante eficaz para um sistema pequeno, pois facilita o \textit{deploy} e desenvolvimento da aplicação; no entanto, enquanto cresce a concentração de funcionalidades em um só sistema, agrava a complexidade do código, dificultando seu entendimento e manutenção, conforme afirmam \citeonline{dmitry2014micro} em On Micro-services Architecture.
+A arquitetura de micro-serviços consiste em variados \textit{softwares} que trabalham independentemente. Em contraposição, existe a abordagem monolítica onde o serviço concentra todas as responsabilidades do software. De fato, a abordagem monolítica é bastante eficaz para um sistema pequeno, pois facilita o \textit{deploy} e desenvolvimento da aplicação; no entanto, a medida que cresce a concentração de funcionalidades em um só sistema, a complexidade do código também aumenta, dificultando seu entendimento e manutenção, conforme afirmam \citeonline{dmitry2014micro}.
 
 A separação de aplicações em módulos visa a flexibilidade de escalar os micros serviços independentemente: ``[\dots] Com a arquitetura monolítica, não é possível escalar cada componente de maneira independente'' \cite[p.24, tradução nossa]{dmitry2014micro}\footnote{\textit{``[\dots] With a monolithic architecture, we can not scale each component independently''}}. Outro benefício na separação das responsabilidades em dois sistemas independentes é o desenvolvimento de novas \textit{features}, manutenção e possível troca de \textit{framework} ou de tecnologia presente no software para algo mais adequado, ou algo mais novo. 
 
-Em uma arquitetura monolítica, mudar o código pode se tornar muito difícil dependendo do tamanho e complexidade da aplicação, de modo coaduno, \citeonline{dmitry2014micro} afirmam: ``[\dots] Com a arquitetura monolítica, é muito difícil (se lê impossível) realizar mudanças.''\cite[p.24, tradução nossa]{dmitry2014micro}\footnote{\textit{``[\dots] With the monolithic architecture, it is very difficult (read impossible) to change it.''}}.
+Em uma arquitetura monolítica, mudar o código pode se tornar muito difícil dependendo do tamanho e complexidade da aplicação, de modo coaduno. \citeonline{dmitry2014micro} afirmam que: ``[\dots] Com a arquitetura monolítica, é muito difícil (se lê impossível) realizar mudanças.'' (tradução nossa)\footnote{\textit{``[\dots] With the monolithic architecture, it is very difficult (read impossible) to change it.''}}.
 
 \section{Web APIs}
 \label{sec:apis}
@@ -77,14 +76,14 @@ Em uma arquitetura monolítica, mudar o código pode se tornar muito difícil de
 
 A comunicação com uma Web API é feita por \textit{requests} utilizando o protocolo HTTP de comunicação. Essa comunicação pode ou não ter envio de informações atreladas. Quando há o envio de informações, um formato utilizado para o envio de dados é o JSON, padrão utilizado para a representação de estruturas de dados \cite{richardson2013restful}.
 
-Aplicações modernas e sistemas baseados em micro-serviços necessitam de comunicação com serviços externos. A utilização de Web APIs é uma alternativa para estabelecer uma ponte de comunicação entre serviços. A API oferece uma lista de funções, que funcionam como uma camada de abstração ao sistema interno. Com isso, os sistemas compartilham informações sem comprometer suas independências \cite{ghebremicael2017transformation}.
+Aplicações modernas e sistemas baseados em micro-serviços necessitam de comunicação com serviços externos. A utilização de Web APIs é uma alternativa para estabelecer uma ponte de comunicação entre serviços. A API oferece uma lista de funções, que funcionam como uma camada de abstração para o sistema interno. Com isso, os sistemas compartilham informações sem comprometer suas independências \cite{ghebremicael2017transformation}.
 
 \section {Desenvolvimento WEB}
 \label{sec:desenvolvimentoWEB}
 
 A definição de Aplicação Web de \citeonline{hadley2006web} é:
 ``[\dots] um aplicativo Web é definido como um aplicativo dinâmico baseado em comunicação HTTP cujas interações são passíveis de processamento por máquina'' \footnote{\textit{[\dots] a Web application is defined as a dynamic HTTP-based application whose
-interactions are amenable to machine processing. [\dots]}} \cite[p.1, tradução nossa]{hadley2006web}. Um exemplo de aplicação web é o site, conjunto de páginas web que compõem uma aplicação.
+interactions are amenable to machine processing. [\dots]}} (p.1, tradução nossa). Um exemplo de aplicação web é o site, conjunto de páginas web que compõem uma aplicação.
 
 Para o desenvolvimento de sites existem várias abordagens. Dentre elas, uma abordagem popular é a utilização do \textit{frameweork} \textit{React} — uma biblioteca \textit{javascript} \textit{open-source} desenvolvida pelo \textit{Facebook}. O conceito principal do \textit{React} é a reutilização de componentes de interfaces para a aceleração do processo de desenvolvimento \cite{rawat2020react}.
 
